@@ -202,8 +202,9 @@ sudo python3 setup.py
     - `Date Wise`
     
 # ScreenShots
-![Screenshot from 2023-02-05 00-55-32](https://user-images.githubusercontent.com/122822828/216786065-873e751c-ea5a-4e7e-9bbf-4622c6114056.png)
-![Screenshot from 2023-02-05 00-55-39](https://user-images.githubusercontent.com/122822828/216786081-5a78632e-5f88-4ee7-a7eb-496c34706c53.png)
+![Screenshot](https://user-images.githubusercontent.com/122822828/216786205-703c36f5-874d-4947-9ea7-a33e7dde1d5b.png)
+![Screenshot](https://user-images.githubusercontent.com/122822828/216786208-428e03f6-f0c5-41b4-a2bf-009633bef6d5.png)
+
 
 <div align="center">
 <h1 id="Contributors">Thanks To All Contributors</h1>
