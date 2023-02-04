@@ -36,7 +36,7 @@
 
 ```shell script
 git clone https://github.com/TeamMetaxone/Cyberonix.git
-cd CYBERONIX
+cd Cyberonix
 sudo setup.py
 ```
 
