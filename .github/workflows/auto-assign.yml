@@ -1,0 +1,30 @@
+name: Auto-Assign
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Auto-Assign Reviewer
+      run: |
+        REVIEWER_1="metaxonesolution"
+        REVIEWER_2="hardikhacker"
+        REVIEWER_3="0xMrR0b0t"
+
+        echo "Assigning one of the following reviewers: $REVIEWER_1, $REVIEWER_2, $REVIEWER_3"
+
+        # Randomly select one of the reviewers
+        REVIEWER=$(echo $REVIEWER_1 $REVIEWER_2 $REVIEWER_3 | tr " " "\n" | shuf -n 1)
+
+        echo "Assigning $REVIEWER as the reviewer"
+        echo "Assigning $REVIEWER"
+        curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X POST -d "{\"assignees\":[\"$REVIEWER\"]}" "https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.number }}/assignees"
