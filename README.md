@@ -40,6 +40,7 @@ Feel free to suggest any feature that you want to see in this tool, We will be h
 
 - [Installation](#installation)
 - [Categories](#Categories)
+- [ScreenShots](#ScreenShots)
 - [Contributors](#Contributors)
 
 # Installation
