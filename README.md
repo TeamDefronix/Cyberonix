@@ -36,6 +36,8 @@ It is a complete resource hub for Cyber Security Community. Our aim is to make t
 
 Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update.
 
+---
+
 - [Installation](#installation)
 - [Categories](#Categories)
 - [Contributors](#Contributors)
