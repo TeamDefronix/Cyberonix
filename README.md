@@ -202,10 +202,4 @@ sudo python3 setup.py
     - `Date Wise`
 
 
-<div align="center">
-<h1 id="Contributors">Thanks To All Contributors</h1>
 
-<a href="https://github.com/TeamMetaxone/Cyberonix/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
-</a>
-</div>
