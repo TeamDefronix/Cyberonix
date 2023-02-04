@@ -38,8 +38,8 @@ try:
         else:
             print("[-] something went wrong".title())
             print(nouse)
-        for i in range(5):
-            print(f"[!] Redirecting in ...{5-i}sec\r".title(),end="")
+        for i in range(3):
+            print(f"[!] Redirecting in ...{3-i}sec\r".title(),end="")
             time.sleep(i)
 
     def main():
