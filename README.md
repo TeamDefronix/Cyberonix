@@ -4,9 +4,6 @@
     <img src="https://forthebadge.com/images/badges/made-with-python.svg">
     <img src="https://forthebadge.com/images/badges/built-with-love.svg">
     </br>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/releases/latest">
-      <img alt="Latest release" src="https://img.shields.io/github/v/release/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
     <a href="https://github.com/TeamMetaxone/Cyberonix/pulse">
       <img alt="Last commit" src="https://img.shields.io/github/last-commit/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
     </a>
