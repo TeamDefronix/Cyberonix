@@ -38,7 +38,8 @@
 apt update -y && apt full-upgrade -y
 git clone https://github.com/TeamMetaxone/Cyberonix.git
 cd Cyberonix
-sudo setup.py
+chmod +x *
+sudo python3 setup.py
 ```
 
 # Categories
