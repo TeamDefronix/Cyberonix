@@ -203,6 +203,7 @@ sudo python3 setup.py
     
 # ScreenShots
 ![Screenshot](https://user-images.githubusercontent.com/122822828/216786205-703c36f5-874d-4947-9ea7-a33e7dde1d5b.png)
+---
 ![Screenshot](https://user-images.githubusercontent.com/122822828/216786208-428e03f6-f0c5-41b4-a2bf-009633bef6d5.png)
 
 
