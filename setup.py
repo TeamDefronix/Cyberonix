@@ -8,6 +8,7 @@ def main():
     banner.main()
     banner.attack("Setup")
     os.system("sudo apt install python3-pip")
+    os.system("sudo apt install pip")
     os.system("pip install -r requirements.txt")
     os.system("sudo apt install golang -y")
     os.system("go env -w GO111MODULE=on")
