@@ -208,6 +208,8 @@ sudo python3 setup.py
 ![Screenshot](https://user-images.githubusercontent.com/122822828/216786208-428e03f6-f0c5-41b4-a2bf-009633bef6d5.png)
 
 
+<p><a href="https://www.buymeacoffee.com/metaxone"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="metaxone" /></a></p>
+
 <div align="center">
 <h1 id="Contributors">Thanks To All Contributors</h1>
 
