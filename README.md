@@ -49,10 +49,11 @@
 ---
 
 [Categories]: #Categories
-[Install]: #installation
+[Install]: #Installation
 [ScreenShots]: #ScreenShots
 [Contributors]: #Contributors
 </div>
+
 # Installation
 
 ```shell script
