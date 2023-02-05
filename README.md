@@ -38,15 +38,15 @@ Feel free to suggest any feature that you want to see in this tool, We will be h
 
 ---
 
-    **[<kbd> <br> Install <br> </kbd>][Install]** 
-    **[<kbd> <br> Configure <br> </kbd>][Configure]** 
-    **[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
-    **[<kbd> <br> Contribute <br> </kbd>][Contribute]**
-    
-    [Contribute]: #Contributors
-    [Install]: #installation
-    [Troubleshoot]: #screenshot
-    [Configure]: #categories
+**[<kbd> <br> Install <br> </kbd>][Install]** 
+**[<kbd> <br> Configure <br> </kbd>][Configure]** 
+**[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
+**[<kbd> <br> Contribute <br> </kbd>][Contribute]**
+
+[Contribute]: #Contributors
+[Install]: #installation
+[Troubleshoot]: #screenshot
+[Configure]: #categories
 
 # Installation
 
