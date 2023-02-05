@@ -37,11 +37,12 @@ It is a complete resource hub for Cyber Security Community. Our aim is to make t
 Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update.
 
 ---
-<div align="center">
+<div align="center"><p>
     **[<kbd> <br> Install <br> </kbd>][Install]** 
     **[<kbd> <br> Configure <br> </kbd>][Configure]** 
     **[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
     **[<kbd> <br> Contribute <br> </kbd>][Contribute]**
+    </p>
 </div>
 
 # Installation
