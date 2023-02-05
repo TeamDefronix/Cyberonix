@@ -50,7 +50,11 @@ try:
         (there, notthere) = proc.communicate()
         there=there.decode()
         if "root" not in there:
-            os.system("sudo cyberonix")
+            try:
+                subprocess.run('sudo cyberonix',shell=True, check = True)
+            except Exception as err:
+                os.system("sudo python3 cyberonix.py")
+            # os.system("sudo cyberonix")
             exit()
         while True:
             os.system("clear")
