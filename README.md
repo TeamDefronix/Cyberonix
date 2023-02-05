@@ -223,7 +223,7 @@ sudo python3 setup.py
 <p><a href="https://www.buymeacoffee.com/metaxone" target="_blank"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Buymeacoffee" /></a></p><br><br><br>
 <p><a href="https://paypal.me/niteshsinghhacker" target="_blank"> <img align="left" src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/master/blue.svg" height="70" width="210" alt="Donate with paypal" /></a></p><br><br><br>
 <p><a href="https://tools.apgy.in/upi/Nitesh+Singh/niteshkumar5@ybl/" target="_blank"> <img align="left" style="border-radius:8px" src="https://user-images.githubusercontent.com/122822828/216837693-3480fcd2-b4fc-40ff-94f8-c5d7d4b82ad5.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
-<p><a href="https://razorpay.me/@technicalnavigator" target="_blank"> <img align="left" src="https://user-images.githubusercontent.com/122822828/216837928-edca1241-2468-43dd-af7f-23e2f22e8944.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
+<p><a href="https://razorpay.me/@technicalnavigator" target="_blank"> <img align="left" src="https://user-images.githubusercontent.com/122822828/216838288-a946ef91-f215-4286-926f-afa71d0c3760.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
 
 <div align="center">
 <h1 id="Contributors">Thanks To All Contributors</h1>
@@ -231,10 +231,11 @@ sudo python3 setup.py
 <a href="https://github.com/TeamMetaxone/Cyberonix/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
 </a>
-</div>
+</div>!
 
 
 [Contribute]: #Contributors
 [Install]: #installation
 [Troubleshoot]: #screenshot
 [Configure]: #categories
+
