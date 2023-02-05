@@ -42,16 +42,16 @@
 ---
 
 **[<kbd> <br> Install <br> </kbd>][Install]** 
-**[<kbd> <br> Configure <br> </kbd>][Configure]** 
-**[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
-**[<kbd> <br> Contribute <br> </kbd>][Contribute]**
+**[<kbd> <br> Categories <br> </kbd>][Categories]** 
+**[<kbd> <br> ScreenShots <br> </kbd>][ScreenShots]** 
+**[<kbd> <br> Contributors <br> </kbd>][Contributors]**
 
 ---
 
-[Contribute]: #Contributors
+[Categories]: #Categories
 [Install]: #installation
-[Troubleshoot]: #screenshot
-[Configure]: #categories
+[ScreenShots]: #ScreenShots
+[Contributors]: #Contributors
 </div>
 # Installation
 
