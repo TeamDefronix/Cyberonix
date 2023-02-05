@@ -49,7 +49,7 @@ Feel free to suggest any feature that you want to see in this tool, We will be h
 apt update -y && apt full-upgrade -y
 git clone https://github.com/TeamMetaxone/Cyberonix.git
 cd Cyberonix
-chmod +x *
+chmod +x setup.py
 sudo python3 setup.py
 ```
 
