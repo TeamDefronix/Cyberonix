@@ -1,6 +1,6 @@
 <div align="center"><p>
     <h1>CYBERONIX</h1>
-    <img src="https://user-images.githubusercontent.com/122822828/216810369-34904b5a-d063-48a9-a87d-11caf293243b.png" width="80%"></br>
+    <img style="filter: brightness(180%);" src="https://user-images.githubusercontent.com/122822828/216810369-34904b5a-d063-48a9-a87d-11caf293243b.png" width="80%"></br>
     <img src="https://forthebadge.com/images/badges/made-with-python.svg">
     <img src="https://forthebadge.com/images/badges/built-with-love.svg">
     </br>
