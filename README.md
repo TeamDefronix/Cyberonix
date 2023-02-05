@@ -42,11 +42,12 @@ Feel free to suggest any feature that you want to see in this tool, We will be h
     **[<kbd> <br> Configure <br> </kbd>][Configure]** 
     **[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
     **[<kbd> <br> Contribute <br> </kbd>][Contribute]**
-    </p>
+    
     [Contribute]: #Contributors
-[Install]: #installation
-[Troubleshoot]: #screenshot
-[Configure]: #categories
+    [Install]: #installation
+    [Troubleshoot]: #screenshot
+    [Configure]: #categories
+</p>
 </div>
 
 # Installation
