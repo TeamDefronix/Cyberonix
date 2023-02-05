@@ -1,6 +1,7 @@
 <div align="center"><p>
     <h1>CYBERONIX</h1>
     <img style="filter: brightness(200%)" src="https://user-images.githubusercontent.com/122822828/216810369-34904b5a-d063-48a9-a87d-11caf293243b.png" width="50%"><br>
+
     <img src="https://forthebadge.com/images/badges/made-with-python.svg">
     <img src="https://forthebadge.com/images/badges/built-with-love.svg">
     <br><br>
@@ -223,6 +224,7 @@ sudo python3 setup.py
 <p><a href="https://www.buymeacoffee.com/metaxone" target="_blank"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Buymeacoffee" /></a></p><br><br><br>
 <p><a href="https://paypal.me/niteshsinghhacker" target="_blank"> <img align="left" src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/master/blue.svg" height="70" width="210" alt="Donate with paypal" /></a></p><br><br><br>
 <p><a href="https://tools.apgy.in/upi/Nitesh+Singh/niteshkumar5@ybl/" target="_blank"> <img align="left" src="https://user-images.githubusercontent.com/122822828/216837693-3480fcd2-b4fc-40ff-94f8-c5d7d4b82ad5.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
+<p><a href="https://razorpay.me/@technicalnavigator" target="_blank"> <img align="left" src="https://user-images.githubusercontent.com/122822828/216837928-edca1241-2468-43dd-af7f-23e2f22e8944.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
 
 <div align="center">
 <h1 id="Contributors">Thanks To All Contributors</h1>
