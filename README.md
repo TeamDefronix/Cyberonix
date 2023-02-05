@@ -28,13 +28,13 @@
   </p>
 
 
-<h1 align="left"> Description </h1>
+<h1 align="left">Description</h1>
 
-<p align="left">Cyberonix is an open source & free tool by Team Metaxone Solution. The tool at first is developed by a team of students as part of their Internship at Metaxone Solution after their Diploma in Cyber Security Training. 
+<p align="left"> Cyberonix is an open source & free tool by Team Metaxone Solution. The tool at first is developed by a team of students as part of their Internship at Metaxone Solution after their Diploma in Cyber Security Training. 
 
 It is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.
 
-Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update.</p>
+Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update. </p>
 
     
 ---
