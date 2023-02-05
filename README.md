@@ -223,3 +223,8 @@ sudo python3 setup.py
   <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
 </a>
 </div>
+
+[Contribute]: #Contributors
+[Install]: #installation
+[Troubleshoot]: #screenshot
+[Configure]: #categories
