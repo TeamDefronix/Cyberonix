@@ -231,7 +231,7 @@ sudo python3 setup.py
 <a href="https://github.com/TeamMetaxone/Cyberonix/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
 </a>
-</div>!
+</div>
 
 
 [Contribute]: #Contributors
