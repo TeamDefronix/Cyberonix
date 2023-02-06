@@ -62,6 +62,7 @@ git clone https://github.com/TeamMetaxone/Cyberonix.git
 cd Cyberonix
 chmod +x setup.py
 sudo python3 setup.py
+cyberonix
 ```
 
 # Categories
