@@ -2,6 +2,7 @@
 import os
 import subprocess
 from main.tools import banner
+import time
 
 def main():
     os.system("clear")
