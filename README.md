@@ -57,7 +57,7 @@
 # Installation
 
 ```shell script
-apt update -y && apt full-upgrade -y
+sudo apt update -y && apt full-upgrade -y
 git clone https://github.com/TeamMetaxone/Cyberonix.git
 cd Cyberonix
 chmod +x setup.py
