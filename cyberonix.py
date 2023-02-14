@@ -5,12 +5,13 @@ from main import *
 from main.tools import banner,colors
 import time
 
+def exit_program():
+    os.system("clear")
+    banner.main()
+    print("\033[38;5;105m","[+] Thanks visit again".title())
+    exit()
+
 try:
-    def exit_program():
-        os.system("clear")
-        banner.main()
-        print("\033[38;5;105m","[+] Thanks visit again".title())
-        exit()
     def update():
         os.system("clear")
         banner.main()
