@@ -25,6 +25,9 @@
     <a href="https://twitter.com/intent/follow?screen_name=niteshlike123">
       <img alt="follow on Twitter" src="https://img.shields.io/twitter/follow/niteshlike123?style=for-the-badge&logo=twitter&color=8aadf3&logoColor=D9E0EE&labelColor=302D41" />
     </a>
+    <a href="https://discord.gg/aJF4rr3PdR">
+    <img alt="Discord" src="https://img.shields.io/discord/1072407436348112896?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41"/>
+    </a>
   </p>
   <p align="center">
     <img src="https://stars.medv.io/TeamMetaxone/Cyberonix.svg", title="commits"/>
