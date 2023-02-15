@@ -26,7 +26,7 @@
       <img alt="follow on Twitter" src="https://img.shields.io/twitter/follow/niteshlike123?style=for-the-badge&logo=twitter&color=8aadf3&logoColor=D9E0EE&labelColor=302D41" />
     </a>
   </p>
-   <p align="center">
+  <p align="center">
     <img src="https://stars.medv.io/TeamMetaxone/Cyberonix.svg", title="commits"/>
   </p>
 
