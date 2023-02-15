@@ -226,11 +226,15 @@ cyberonix
 
 <h1 align="Center">Socials</h1><br>
 
+---
+
 <p align="center">
 <a href="https://github.com/TeamMetaxone"><img src="https://user-images.githubusercontent.com/696094/196835284-c52d4bd1-7034-439e-848b-47d4f2933dff.svg" width="64" height="64" alt="Github Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://discord.gg/aJF4rr3PdR"><img src="https://user-images.githubusercontent.com/696094/196835282-f5c47d66-29b7-4210-9ee0-d9cdecde3559.svg" width="64" height="64" alt="Discord Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://twitter.com/niteshlike123"><img src="https://user-images.githubusercontent.com/696094/196835281-52617611-ede6-40da-a4bc-8c5025622bbf.svg" width="64" height="64" alt="Twitter Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/>
 </p>
 
 <h3 align="left">Support:</h3>
+
+---
 
 <p><a href="https://www.buymeacoffee.com/metaxone" target="_blank"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Buymeacoffee" /></a></p><br><br><br>
 <p><a href="https://paypal.me/niteshsinghhacker" target="_blank"> <img align="left" src="https://raw.githubusercontent.com/andreostrovsky/donate-with-paypal/master/blue.svg" height="70" width="210" alt="Donate with paypal" /></a></p><br><br><br>
@@ -238,7 +242,7 @@ cyberonix
 <p><a href="https://razorpay.me/@technicalnavigator" target="_blank"> <img align="left" src="https://user-images.githubusercontent.com/122822828/216838288-a946ef91-f215-4286-926f-afa71d0c3760.png" height="50" width="210" alt="Donate with paypal" /></a></p><br><br>
 
 <div align="center">
-<h1 id="Contributors">Thanks To All Contributors</h1>
+    <h1 id="Contributors">Thanks To All Contributors</h1>
 
 <a href="https://github.com/TeamMetaxone/Cyberonix/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
