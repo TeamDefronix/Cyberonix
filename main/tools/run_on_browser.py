@@ -11,3 +11,4 @@ def main(URL):
             os.system(f"firefox {URL} > /dev/null 2>&1")
             os.system(f"sudo chown {user}:{user} /run/user/{user}/gdm/Xauthority > /dev/null 2>&1")
             os.system(f"sudo chown {user}:{user} /home/{user}/.Xauthority > /dev/null 2>&1")
+
