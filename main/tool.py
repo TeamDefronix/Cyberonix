@@ -1,10 +1,6 @@
 
 from main.tools import *
 import os
-def exit_program():
-        os.system("clear")
-        banner.main()
-        print("\033[38;5;105m","[+] Thanks visit again".title())
 def main():
     while True:
         os.system("clear")
@@ -54,9 +50,8 @@ def main():
             os.system("clear")
             Pentesting_Bug_Bounty.main()
         else:
-            exit_program()
+            print("[-] going back")
             return
-            
 
 if __name__ == "__main__": 
     main()
