@@ -1,1 +1,1 @@
-__all__=["cyberonix","setup","main"]
+__all__["cyberonix","setup","main"]
