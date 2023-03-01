@@ -2,6 +2,11 @@ from main.tools import banner
 import requests
 from bs4 import BeautifulSoup
 import os
+def exit_program():
+        os.system("clear")
+        banner.main()
+        print("\033[38;5;105m","[+] Thanks visit again".title())
+
 def get_news(url="https://thehackernews.com/"):
     os.system("clear")
     banner.main()
@@ -32,15 +37,20 @@ def get_news(url="https://thehackernews.com/"):
     for title, date, url,description in zip(titles, dates, urls,discription_post):
         print(f"\n\u001b[33mTitle: {title}\u001b[0m \n\u001b[32mdescription: {description}\u001b[0m  \nDate: {date} \n\u001b[34mURL: {url}\u001b[0m \n\n")
     input("\u001b[31mPress ENTER to go back\u001b[0m")
-def main():
+def main(date=''):
     os.system("clear")
     banner.main()
     banner.attack("News")
-    ask=input("Do you want news Date wise?(y/n)".title())
-    if ask.lower()=="y" or ask.lower()=="y":
-        date_user=input("Enter Date:(YYYY-MM-DD)")
-        get_news(f"https://thehackernews.com/search?updated-max={date_user}T17:23:00%2B05:30&max-results=10")
+    if date=='':
+        ask=input("Do you want news Date wise?(y/n)".title())
+        if ask.lower()=="y" or ask.lower()=="y":
+            date_user=input("Enter Date:(YYYY-MM-DD)")
+            get_news(f"https://thehackernews.com/search?updated-max={date_user}T17:23:00%2B05:30&max-results=10")
+        else:
+            get_news()
     else:
-        get_news()
+        get_news(f"https://thehackernews.com/search?updated-max={date}T17:23:00%2B05:30&max-results=10")
+    exit_program()
+
 if __name__=="__main__":
     main()
