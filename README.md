@@ -58,7 +58,7 @@
 [Install]: #Installation
 [ScreenShots]: #ScreenShots
 [Contributors]: #Contributors
-[Usage]: #usage
+[Usage]: #Usage
 </div>
 
 
@@ -435,4 +435,4 @@ remove duplicate:
 [Install]: #installation
 [Troubleshoot]: #screenshot
 [Configure]: #categories
-[Usage]: #usage
+[Usage]: #Usage
