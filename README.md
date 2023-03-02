@@ -69,6 +69,11 @@ chmod +x setup.py
 sudo python3 setup.py
 cyberonix
 ```
+# pip Installation
+
+```apache
+pip install cyberonix
+```
 
 # Categories
 - ## Tools
@@ -183,14 +188,120 @@ cyberonix
             - `Metasploit-Framework`
             - `Covermyass`
     - ### Pentesting And Bug-Bounty
-        - `Katana` 
-        - `Gau` 
-        - `Gobuster` 
-        - `Waybackurls` 
-        - `Httpx` 
-        - `Httprobe` 
-        - `Eyewitness` 
-        - `Gowitness` 
+        - ### Information Gathering
+            - `Nmap`
+            - `Maltego`
+            - `Dracnmap`
+            - `Red_Hawk`
+            - `Th3Inspector`
+            - `Hping3`
+            - `Arping`
+            - `Netdiscover`
+            - `Wafw00F`
+        - ### Configuration Management
+            - `Dirb`
+            - `gobuster`
+            - `Nikto`
+            - `Wfuzz`
+            - `Skipfish`
+            - `Dirbuster`
+            - `Feroxbuster`
+            - `Nmap`
+            - `Httpie`
+            - `Metasploit`
+            - `Securityheaders`
+            - `Sqlmap`
+            - `Trufflehog`
+            - `Gitleaks`
+            - `Secretfinder`
+        - ### Secure Transmission
+            - ### Writeups
+                - `Check Ssl Version, Algorithms, Key Length`
+                - `Check For Digital Certificate Validity`
+                - `Check Credentials Only Delivered Over Https`
+                - `Check Session Tokens Only Delivered Over Https`
+                - `Check If Http Strict Transport Security (Hsts) In Use`
+        - ### Authentication
+            - `Burp Suite`
+            - `Wireshark`
+            - `Owasp Zap`
+            - `Nessus`
+            - `Hydra`
+            - `Beef`
+            - `Sqlmap`
+            - `Metasploit`
+            - `Nmap`
+            - `Penetration Testers Framework (Ptf)`
+        - ### Session Management
+            - `Owasp Zap`
+            - `Burpsuite`
+            - `Nikto`
+            - `Nmap`
+            - `Arachni`
+            - `Wapiti`
+            - `Nessus`
+            - `Nuclei`
+            - `Fiddler`
+            - `Penetration Testers Framework (Ptf)`
+        - ### Authorization
+            - `Burpsuite`
+            - `Wireshark`
+            - `Owasp Zap`
+            - `Nessus`
+            - `Hydra`
+            - `Beef`
+            - `Sqlmap`
+            - `Metasploit`
+            - `Nmap`
+            - `Penetration Testers Framework (Ptf)`
+        - ### Data Validation
+            - `Xss`
+            - `Xxe - Xml`
+            - `Html Injection`
+            - `Sql Injection`
+            - `Command Injection`
+            - `Http Smuggling`
+            - `Http Parameter Pollution`
+            - `Open Redirection`
+            - `Lfi`
+        - ### Denial Of Service
+            - `Goldeneye`
+            - `Slowhttptest`
+            - `Thc-Ssl-Dos`
+            - `Slowloris`
+        - ### Business Logic
+            - ### Writeups
+                - `Business Logic`
+                - `Exploiting Business Logic Vulnerabilities`
+                - `Web Application — Business Logic Vulnerabilities`
+                - `Business Logic Flaw`
+        - ### Cryptography
+            - `Sslstript`
+            - `Bettercap`
+            - `Ettercap (Graphical Of Bettercap)`
+            - `Sslyze`
+            - `0-Saft`
+            - `Sslscan`
+            - `Ssllabs`
+        - ### Risky Functionality - File Uploads
+            - `Fuxploider`
+            - `Fuse`
+        - ### Risky Functionality - Card Payment
+            - `Burpsuite`
+            - `Wireshark`
+            - `Owasp Zap`
+            - `Nessus`
+            - `Sqlmap`
+            - `Fiddler`
+            - `Metasploit`
+            - `Nmap`
+            - `Penetration Testers Framework (Ptf)`
+        - ### Html 5
+            - ### Writeups
+                - `Web Messaging`
+                - `Web Storage Sql Injection`
+                - `Cors Implementation`
+                - `Offline Web Application`
 - ## Cheatsheets
     - `Nmap Cheatsheet` 
     -  `Maltego Cheatsheet` 
@@ -218,11 +329,83 @@ cyberonix
     -  `Aircrack-Ng Cheatsheet`
 - ## News
     - `Date Wise`
+
+# Usage
+
+```sh
+cyberonix -h
+```
+Please find below the instructions to access the tool's help function, along with a list of all available switches:
+
+```console
+Cyberonix is a complete resource hub for Cyber Security Community. Our aim is
+to make this tool an 1 stop solution for all the Hackers out there to get
+resources of various topics in Cyber Security. We will keep updating this tool
+& adding new & updated resources on the go.
+
+options:
+  -h, --help            show this help message and exit
+  --domain DOMAIN, -D DOMAIN
+                        Specify the domain
+  --output OUTPUT, -o OUTPUT
+                        Specify An Input File (-f path/to/file.txt)
+  --file FILE, -f FILE  Specify An Output File (-o path/to/location)
+  --ip IP, -ip IP       Specify IP Address
+
+Main Arguments:
+  --tools, -t           Run Tools Function
+  --cheatsheet, -c      Run Cheatsheet Function
+  --news [Date], -n [Date]
+                        Date In The Format yyyy-mm-dd
+
+IP:
+  --getip Domain, -gip Domain
+                        Get Ip Of A Domain
+  --ipinfo IP, -ipi IP  Get IP Infomation
+
+DNS Records:
+  --dnsrecord, -dns     To Get DNS Records(options: --domain) and use --record
+                        to specify record name
+  --record RECORD, -r RECORD
+                        To Give Record For DNSrecord(Like: A,TXT,MX)
+
+Screenshoting:
+  --screenshot, -s      To Get Screenshot Of Websites(options: --file,--
+                        domain)
+  ASN Record:
+  --asnrecord, -asn     To Get ASN Record(Options: --ip,--file,--output)
+
+Password Generation:
+  --passwordgen, -P     To Generate Password
+  --default-password-gen, -pass
+                        To Generate Random Password (Recommended)(You can only
+                        use --length,--checkpassword)
+  --upper, -u           For Uppercase
+  --lower, -l           For Lowercase
+  --digits, -d          For Digits
+  --punctuation, -p     For Punctuation
+  --length LENGTH, -L LENGTH
+                        To Specify Length Of Password (Default=8)
+  --checkpassword, -C   To Check Your Generated Password
+
+HTTP Status:
+  --http-status, -S     To Get Http Status Code Of A Domain(Options: --domain,
+                        --file,--output)
+
+remove duplicate:
+  --remove-duplicate, -rd
+                        To Remove Dublicates From a File(Options: --file,--
+                        output)
+```
     
 # ScreenShots
-![Screenshot](https://user-images.githubusercontent.com/122822828/216786205-703c36f5-874d-4947-9ea7-a33e7dde1d5b.png)
+![help](https://user-images.githubusercontent.com/53564887/222358670-e7b2c901-37a7-4220-a885-b31d617dc801.png)
 ---
-![Screenshot](https://user-images.githubusercontent.com/122822828/216786208-428e03f6-f0c5-41b4-a2bf-009633bef6d5.png)
+![home](https://user-images.githubusercontent.com/53564887/222358728-46594e68-cb5f-431b-9ff7-21dec0303689.png)
+---
+![tools](https://user-images.githubusercontent.com/53564887/222358767-be62a30f-cb7e-4d29-8448-2fffe56ce358.png)
+---
+![bug-bounty menue](https://user-images.githubusercontent.com/53564887/222358835-d1eb1b7a-ab0d-446b-b2de-3d6d8911b606.png)
 
 <h1 align="left">Socials</h1>
 
@@ -249,4 +432,3 @@ cyberonix
 [Install]: #installation
 [Troubleshoot]: #screenshot
 [Configure]: #categories
-
