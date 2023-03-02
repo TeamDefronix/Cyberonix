@@ -77,7 +77,7 @@ cyberonix
 ```apache
 pip install cyberonix
 ```
-If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/">click here</a>
+If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/" target="_blank">click here</a>
 # Categories
 - ## Tools
     - ### Information Gathring
