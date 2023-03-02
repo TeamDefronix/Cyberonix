@@ -435,3 +435,4 @@ remove duplicate:
 [Install]: #installation
 [Troubleshoot]: #screenshot
 [Configure]: #categories
+[Usage]: #usage
