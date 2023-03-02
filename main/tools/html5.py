@@ -9,7 +9,7 @@ def main():
     while True:
         os.system("clear")
         banner.main()
-        banner.attack("DOS ATTACK - BUG BOUNTY")
+        banner.attack("HTML5")
         list_vulns = [
             "WEB Messaging",
             "WEB Storage SQL Injection",
