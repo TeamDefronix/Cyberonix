@@ -50,6 +50,7 @@
 **[<kbd> <br> Categories <br> </kbd>][Categories]** 
 **[<kbd> <br> ScreenShots <br> </kbd>][ScreenShots]** 
 **[<kbd> <br> Contributors <br> </kbd>][Contributors]**
+**[<kbd> <br> Usage <br> </kbd>][Usage]**
 
 ---
 
@@ -57,7 +58,9 @@
 [Install]: #Installation
 [ScreenShots]: #ScreenShots
 [Contributors]: #Contributors
+[Usage]: #Usage
 </div>
+
 
 # Installation
 
@@ -432,3 +435,4 @@ remove duplicate:
 [Install]: #installation
 [Troubleshoot]: #screenshot
 [Configure]: #categories
+[Usage]: #Usage
