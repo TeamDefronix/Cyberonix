@@ -18,7 +18,7 @@ def main():
                 list_attacks=["SSLstript","Bettercap","Ettercap (Graphical of bettercap)","sslyze","O-Saft","sslscan","SSLLabs","go back"]
                 for i in range(len(list_attacks)):
                     print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-                option2 = input(f"\n {colors.select}Select An Option ->{colors.reset}")
+                option2 = input(f"\n {colors.select}Select An Option ->  {colors.reset}")
                 if option2=="0":
                     print(f"\n[+] SSLstript")
                     os.system("clear")

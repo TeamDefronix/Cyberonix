@@ -48,7 +48,7 @@ def main():
                     os.system("clear")
                     github = "Dirb is a web application scanner tool that is commonly used for reconnaissance and information gathering during web application testing. It can be used to brute-force common directory and file names on a web server, and is often used by penetration testers and security professionals to identify potential vulnerabilities in web applications. By running Dirb on a target web application, testers can quickly identify common directories and files that may contain sensitive information or be vulnerable to attack. This can help to guide further testing efforts and improve the overall security posture of the web application."
                     template.template(
-                        "Dirb",
+                        "dirb",
                         "dirb",
                         github.strip(),
                         {
@@ -62,7 +62,7 @@ def main():
                     os.system("clear")
                     github = """Gobuster is an open-source tool used by security professionals and penetration testers to perform web content discovery and directory/file enumeration on a target website. It is a popular tool used in bug bounty hunting and vulnerability assessments. The tool works by launching a series of HTTP requests to the target website and analyzing the responses to discover hidden directories, files, and other web resources that may not be easily discoverable through normal browsing. It uses a wordlist of common directory and file names, as well as brute-force techniques to guess the names of hidden directories and files."""
                     template.template(
-                        "Gobuster",
+                        "gobuster",
                         "gobuster -h",
                         github.strip(),
                         {
@@ -76,7 +76,7 @@ def main():
                     os.system("clear")
                     github = "Nikto is an open-source web server scanner used by security professionals and penetration testers to identify vulnerabilities and misconfigurations in web servers and web applications. It is a popular tool used in bug bounty hunting and vulnerability assessments. The tool works by launching a series of HTTP requests to the target website and analyzing the responses to identify potential security issues. It checks for known vulnerabilities and misconfigurations in the web server, including outdated software versions, insecure server configurations, and other common security issues."
                     template.template(
-                        "Nikto",
+                        "nikto",
                         "nikto --help",
                         github.strip(),
                         {
@@ -90,14 +90,14 @@ def main():
                     os.system("clear")
                     github = "Wfuzz is a web application brute force tool used to identify web application vulnerabilities by scanning web content, such as directories and files, for hidden or non-linked content. Wfuzz can be used to test input validation, error handling, and access control mechanisms. It is a command-line tool and allows users to customize requests to send payloads, which makes it very flexible and powerful for web application penetration testing. Wfuzz is written in Python and can be used on Linux, Windows, and macOS. It is open-source and free to use."
                     template.template(
-                        "Wfuzz", "wfuzz --help", github.strip(), "no-writeups"
+                        "wfuzz", "wfuzz --help", github.strip(), "no-writeups"
                     )
                 elif option == "4":
                     print("\n[+] Skipfish")
                     os.system("clear")
                     github = "Skipfish is an open-source web application security scanner that is commonly used in bug bounty hunting and vulnerability assessments. It is designed to efficiently scan large and complex web applications and identify potential security vulnerabilities. The tool works by launching a series of requests to the target website and analyzing the responses to identify potential vulnerabilities, such as SQL injection, cross-site scripting, and file inclusion vulnerabilities. Skipfish uses a combination of automated and manual techniques to identify vulnerabilities, including fuzzing and signature-based scanning."
                     template.template(
-                        "Skipfish",
+                        "skipfish",
                         "skipfish -h",
                         github.strip(),
                         {
@@ -109,14 +109,14 @@ def main():
                     os.system("clear")
                     github = "DirBuster is a web application scanner designed to brute force directories and files names on web servers. It is a Java-based tool and can be used to discover hidden content, sensitive files, and directories that are not exposed through normal web browsing. DirBuster is also capable of detecting common web application vulnerabilities such as SQL injection, file inclusion, and cross-site scripting. The tool has an easy to use graphical user interface, and users can customize the wordlist to use in the directory and file name brute force. It is widely used by security professionals, penetration testers, and bug bounty hunters to identify security issues in web applications."
                     template.template(
-                        "Dirbuster", "dirbuster -h", github.strip(), "no-writeups"
+                        "dirbuster", "dirbuster -h", github.strip(), "no-writeups"
                     )
                 elif option == "6":
                     print("\n[+] Feroxbuster")
                     os.system("clear")
                     github = "Feroxbuster is an open-source content discovery and directory/file enumeration tool used in bug bounty hunting and web application security assessments. It quickly scans a target website for hidden directories, files, and other resources using a variety of techniques and generates a report of its findings."
                     template.template(
-                        "Feroxbuster", "feroxbuster -h", github.strip(), "no-writeups"
+                        "feroxbuster", "feroxbuster -h", github.strip(), "no-writeups"
                     )
                 elif option == "7":
                     print("\n[+] Nmap")
@@ -155,7 +155,7 @@ def main():
                     os.system("clear")
                     github = """SecurityHeaders is a configuration management tool that focuses on securing web applications by helping administrators configure appropriate HTTP security headers. HTTP security headers are additional response headers that can be sent by a web server to a client's browser to instruct it to follow certain security-related behaviors. For example, the "Content-Security-Policy" header can be used to restrict the types of content that a web page can load, helping to prevent cross-site scripting (XSS) attacks."""
                     template.template(
-                        "SecurityHeaders",
+                        "securityheaders",
                         "pip install -r requirements.txt > /dev/null 2>&1 && python3 securityheaders.py -h",
                         github.strip(),
                         {
@@ -184,7 +184,7 @@ def main():
                     os.system("clear")
                     github = "Trufflehog is an open-source tool used for searching and identifying sensitive information and secrets, such as API keys, passwords, and private keys, in source code repositories. It is designed to scan code repositories for potential security vulnerabilities that could be exploited by attackers, and can be used in bug bounty hunting and vulnerability assessments. Trufflehog uses advanced techniques, such as entropy analysis and regular expressions, to identify potential security issues, and generates a report of its findings. It is a powerful and flexible tool that can help security professionals and developers identify potential security risks in their code."
                     template.template(
-                        "Trufflehog",
+                        "trufflehog",
                         "trufflehog -h",
                         github.strip(),
                         {
@@ -197,14 +197,14 @@ def main():
                     os.system("clear")
                     github = "Gitleaks is an open-source tool used to scan Git repositories for sensitive information and secrets, such as passwords, API keys, and private keys. It is designed to identify potential security vulnerabilities that could be exploited by attackers, and can be used in bug bounty hunting and vulnerability assessments. Gitleaks uses a comprehensive set of rules and checks to detect potential security issues, and can be customized with various options and configurations to suit specific use cases. It generates a report of its findings, which can be used to remediate identified vulnerabilities and improve the overall security of the Git repositories. Gitleaks is a powerful and efficient tool that can help security professionals and developers identify potential security risks in their code repositories."
                     template.template(
-                        "Gitleaks", "gitleaks -h", github.strip(), "no-writeups"
+                        "gitleaks", "gitleaks -h", github.strip(), "no-writeups"
                     )
                 elif option == "14":
                     print("\n[+] SecretFinder")
                     os.system("clear")
                     github = "SecretFinder is an open-source tool used to scan web applications for sensitive information and secrets, such as API keys, passwords, and tokens. It is designed to identify potential security vulnerabilities that could be exploited by attackers, and can be used in bug bounty hunting and vulnerability assessments. SecretFinder uses a combination of static analysis and dynamic analysis techniques to discover secrets, and can be customized with various options and configurations to suit specific use cases. It generates a report of its findings, which can be used to remediate identified vulnerabilities and improve the overall security of the web application. SecretFinder is a powerful and efficient tool that can help security professionals and developers identify potential security risks in their web applications."
                     template.template(
-                        "SecretFinder",
+                        "secretFinder",
                         "pip install -r requirements.txt > /dev/null 2>&1 && python3 SecretFinder.py -h",
                         github.strip(),
                         {

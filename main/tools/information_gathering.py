@@ -146,7 +146,7 @@ def main():
         elif option == "8":
             print("\n[+] Wafw00f")
             os.system("clear")
-            github = ""
+            github = "WAFW00F is a Python tool to help you fingerprint and identify Web Application Firewall (WAF) products. It is an active reconnaissance tool as it actually connects to the web server, but it starts out with a normal HTTP response and escalates as necessary."
             template.template(
                 "Wafw00f",
                 "wafw00f --help",

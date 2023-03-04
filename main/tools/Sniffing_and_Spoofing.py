@@ -63,7 +63,7 @@ def main():
             github_text_0=github_getting_text("https://www.kali.org/tools/responder/",'p',1)
             github_text_1=github_getting_text("https://www.kali.org/tools/responder/",'p',2)
             github = github_text_0 + github_text_1
-            template.template("responder","responder -h",github.strip(),{"Responder-Guide": "https://www.ivoidwarranties.tech/posts/pentesting-tuts/responder/guide/","How-To-Use-Responder-to-Capture-NETNTLM-and-Grab-a-Shell": "https://www.a2secure.com/blog-en/how-to-use-responder-to-capture-netntlm-and-grab-a-shell/","infinitelogins.com-Responder": "https://infinitelogins.com/tag/responder/","Capture-Window-10-NTLM-Hashes-Responder": "https://secnhack.in/capture-window-10-ntlm-hashes-responder"})
+            template.template("responder","responder -h",github,{"Responder-Guide": "https://www.ivoidwarranties.tech/posts/pentesting-tuts/responder/guide/","How-To-Use-Responder-to-Capture-NETNTLM-and-Grab-a-Shell": "https://www.a2secure.com/blog-en/how-to-use-responder-to-capture-netntlm-and-grab-a-shell/","infinitelogins.com-Responder": "https://infinitelogins.com/tag/responder/","Capture-Window-10-NTLM-Hashes-Responder": "https://secnhack.in/capture-window-10-ntlm-hashes-responder"})
         elif option=="9":
             print("\n[+] Airgeddon")
             os.system("clear")
