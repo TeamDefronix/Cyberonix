@@ -32,11 +32,11 @@ class template:
                 banner.description(self.discription)
             else:
                 writeup.writeup(self.writeup,self.name)
-                return
+                break
             ask = tool_writeups(self.name,self.writeup, self.command)
             if ask == "1":
                 if self.command == "no-tools":
-                    return
+                    break
                 else:
                     if method == "kali":
                         check_installed(self.name, self.command)
@@ -60,6 +60,7 @@ class template:
                             os.system("mkdir Tools")
                         if os.path.exists(f"Tools/{self.github_check}"):
                             print(f"{colors.green}[+] It Is Installed{colors.reset}")
+                            print(f"[+] It Is Installed In Your Kali{colors.reset}")
                             run = input(
                                 f"{colors.blue}[+] Do You Want To Run?(y/n):{colors.reset}"
                             )
@@ -68,7 +69,8 @@ class template:
                                     f"cd Tools/{self.github_check} && {self.command}"
                                 )
                         else:
-                            print(f"{colors.red}[-]Not Installed{colors.reset}")
+                            print(f"{colors.red}[-] Not Installed{colors.reset}")
+                            print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
                             installed = input(
                                 f"{colors.blue}Do You Want To Install The Tool?(y/n):{colors.reset}"
                             )
@@ -82,14 +84,13 @@ class template:
                                         f"cd Tools/{self.github_check} && {self.command}"
                                     )
                         waiting.waiting()
-                    return
             elif ask == "2":
                 if self.writeup == "no-writeups":
                     pass
                 else:
                     writeup.writeup(self.writeup, self.name)
             else:
-                return
+                break
 
 
 def tool_writeups(name,check="no-writeups", tool_check="no-tools"):
@@ -109,7 +110,7 @@ def check_installed(name, run_arg):
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
         print(f"\n{colors.red}[+] Not Installed")
-        print(f"{colors.red}\n[+] It Is Not Installed In Your Kali{colors.reset}")
+        print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
         install = input(
             f"{colors.blue}Do You Want To Install The Tool?(y/n):{colors.reset}"
         )
@@ -166,7 +167,7 @@ def pip_install(name, run_arg):
     proc = subprocess.Popen([f"which {name}"], stdout=subprocess.PIPE, shell=True)
     (there, nothere) = proc.communicate()
     if there:
-        print(f"\n{colors.green}[+] Installed")
+        print(f"{colors.green}[+] Installed")
         print(f"[+] It Is Installed In Your Kali{colors.reset}\n")
         download = input(
             f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset} "
@@ -193,7 +194,7 @@ def which_check(name, link, run_arg):
     proc = subprocess.Popen([f"which {name}"], stdout=subprocess.PIPE, shell=True)
     (there, nothere) = proc.communicate()
     if there:
-        print(f"\n{colors.green}[+] Installed")
+        print(f"{colors.green}[+] Installed")
         print(f"[+] It Is Installed In Your Kali{colors.reset}\n")
         download = input(
             f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset} "
@@ -201,7 +202,7 @@ def which_check(name, link, run_arg):
         if download.lower() == "y" or download.lower() == "yes":
             os.system(f"{run_arg}")
     else:
-        print(f"{colors.red}\n[+] It Is Not Installed In Your Kali{colors.reset}")
+        print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
         download = input(
             f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset} "
         )
@@ -222,8 +223,8 @@ def deb_install(name, command, link):
     )
     (there, notthere) = proc.communicate()
     if "install ok installed" not in there.decode():
-        print(f"\n{colors.red}[+] Not Installed")
-        print(f"{colors.red}\n[+] It Is Not Installed In Your Kali{colors.reset}")
+        print(f"{colors.red}[+] Not Installed")
+        print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
         install = input(
             f"{colors.blue}Do You Want To Install The Tool?(y/n):{colors.reset}"
         )
