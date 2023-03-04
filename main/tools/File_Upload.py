@@ -1,4 +1,4 @@
-from main.tools import banner, template, colors
+from main.tools import banner, template, colors, writeup
 from main import Cheat_sheet
 import os
 import requests
@@ -19,7 +19,7 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack(f"Tools")
-                list_tools = ["fuxploider", "FUSE", "go back"]
+                list_tools = ["fuxploider", "Upload Scanner", "go back"]
                 for i in range(len(list_tools)):
                     print(
                         colors.options, f"{i+1}) {list_tools[i]}".title(), colors.reset
@@ -27,38 +27,36 @@ def main():
                 option = input(f"\n {colors.select}Select an Option ->{colors.reset} ")
 
                 if option == "1":
-                    print("\n[+] Flxploider")
                     github = github_getting_text(
                         "https://github.com/almandin/fuxploider", 'p[dir="auto"]', 1
                     )
                     template.template(
                         "flxploider",
-                        "cd fuxploider && python3 fuxploider.py -h",
+                        "python3 fuxploider.py -h",
                         github,
                         "no-writeups",
                         link="https://github.com/almandin/fuxploider.git",
                         method="github",
-                        github_install="git clone https://github.com/almandin/fuxploider.git",
+                        github_install="git clone https://github.com/almandin/fuxploider.git && python3 -m pip install -r fuxploider/requirements.txt ",
+                        github_check="fuxploider"
                     )
                 elif option == "2":
-                    print("\n[+] FUSE")
                     github = github_getting_text(
-                        "https://github.com/WSP-LAB/FUSE", "p[dir=auto]", 0
+                        "https://github.com/portswigger/upload-scanner", "p[dir=auto]", 0
                     )
                     template.template(
-                        "FUSE",
-                        "cd FUSE && python2 framework.py -h",
+                        "Upload Scanner",
+                        "https://github.com/portswigger/upload-scanner",
                         github,
                         "no-writeups",
-                        link="https://github.com/WSP-LAB/FUSE.git",
-                        method="github",
-                        github_install="git clone https://github.com/WSP-LAB/FUSE.git",
+                        method="browser"
                     )
+
                 else:
                     break
         elif option == "2":
             # writeup.writeup({"Test Upload of Unexpected File Types":"https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/08-Test_Upload_of_Unexpected_File_Types","What is Unrestricted File Upload?":"https://www.aptive.co.uk/blog/unrestricted-file-upload-testing/","File Upload General Methodology":"https://book.hacktricks.xyz/pentesting-web/file-upload","File upload vulnerabilities":"https://portswigger.net/web-security/file-upload","File Upload Attacks (Part 2)":"https://blog.yeswehack.com/yeswerhackers/file-upload-attacks-part-2/","Hunting for Bugs in File Upload Feature:":"https://sm4rty.medium.com/hunting-for-bugs-in-file-upload-feature-c3b364fb01ba","How I abused the file upload function to get a high severity vulnerability in Bug Bounty":"https://infosecwriteups.com/how-i-abused-the-file-upload-function-to-get-a-high-severity-vulnerability-in-bug-bounty-7cdcf349080b","Directory Traversal via PHP Multi-File Uploads":"https://nealpoole.com/blog/tag/file-upload/"},"Writups")
-            Cheat_sheet.cheat(
+            writeup.writeup(
                 {
                     "Test Upload of Unexpected File Types": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/10-Business_Logic_Testing/08-Test_Upload_of_Unexpected_File_Types",
                     "What is Unrestricted File Upload?": "https://www.aptive.co.uk/blog/unrestricted-file-upload-testing/",
@@ -91,3 +89,4 @@ def github_getting_text(link, selector, indexvalue):
 
 if __name__ == "__main__":
     main()
+

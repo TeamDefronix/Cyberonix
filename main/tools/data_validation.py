@@ -38,7 +38,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("XSS")
-                        des = "==> It is recommended to test manually for XSS vulnerability to get better understanding & results.\nCheck out the writeup section to to learn about Cross Site Scripting"
+                        des = "It is recommended to test manually for XSS vulnerability to get better understanding & results.\nCheck out the writeup section to to learn about Cross Site Scripting"
                         banner.description(des)
                         list_tools = ["Dalfox", "XSStrike", "Xsser", "go back"]
                         for i in range(len(list_tools)):
@@ -141,7 +141,7 @@ def main():
             banner.main()
             banner.attack("XXE - XML External Entity")
             # name,command,discription,writeups,link="",method="kali",github_install="",github_check=""
-            github = "==> No tools available for this Vulnerability type.\nIt is recommended to test manually for XML External Entity (XXE) to get better understanding & results.\nCheck out the writeup section to to learn about XXE"
+            github = "No tools available for this Vulnerability type.\nIt is recommended to test manually for XML External Entity (XXE) to get better understanding & results.\nCheck out the writeup section to to learn about XXE"
             template.template(
                 "XXE",
                 "no-tools",
@@ -163,7 +163,7 @@ def main():
             banner.main()
             banner.attack("HTML Injection")
             # name,command,discription,writeups,link="",method="kali",github_install="",github_check=""
-            github = "==> No tools available for this Vulnerability type.\nIt is recommended to test manually for HTML Injection to get better understanding & results.\nCheck out the writeup section to to learn about HTML Injection"
+            github = "No tools available for this Vulnerability type.\nIt is recommended to test manually for HTML Injection to get better understanding & results.\nCheck out the writeup section to to learn about HTML Injection"
             template.template(
                 "HTML Injection",
                 "no-tools",
@@ -189,7 +189,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("SQL Injection")
-                        des = "==> It is recommended to test manually for SQL Injection to get better understanding & results.\nCheck out the writeup section to to learn about SQL Injection"
+                        des = "It is recommended to test manually for SQL Injection to get better understanding & results.\nCheck out the writeup section to to learn about SQL Injection"
                         banner.description(des)
                         list_tools = ["SqlMap", "go back"]
                         for i in range(len(list_tools)):
@@ -250,7 +250,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("Command Injection")
-                        des = "==> It is recommended to test manually for Command Injection to get better understanding & results.\nCheck out the writeup section to to learn about Command Injection"
+                        des = "It is recommended to test manually for Command Injection to get better understanding & results.\nCheck out the writeup section to to learn about Command Injection"
                         banner.description(des)
                         list_tools = ["Commix", "go back"]
                         for i in range(len(list_tools)):
@@ -305,7 +305,7 @@ def main():
             os.system("clear")
             banner.main()
             banner.attack("HTTP Request Smuggling")
-            github = "==> No tools available for this Vulnerability type.\nIt is recommended to test manually for HTTP Req. Smuggling to get better understanding & results.\nCheck out the writeup section to to learn about HTTP Req. Smuggling"
+            github = "No tools available for this Vulnerability type.\nIt is recommended to test manually for HTTP Req. Smuggling to get better understanding & results.\nCheck out the writeup section to to learn about HTTP Req. Smuggling"
             template.template(
                 "HTTP Request Smuggling",
                 "no-tools",
@@ -349,7 +349,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("Open Redirection")
-                        des = "==> It is recommended to test manually for Open Redirection to get better understanding & results.\nCheck out the writeup section to to learn about Open Redirection"
+                        des = "It is recommended to test manually for Open Redirection to get better understanding & results.\nCheck out the writeup section to to learn about Open Redirection"
                         banner.description(des)
                         list_tools = ["OpenRedireX", "Oralyzer", "go back"]
                         for i in range(len(list_tools)):
