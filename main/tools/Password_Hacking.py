@@ -22,7 +22,6 @@ def main():
                 if ask == "0":
                     github = "Hashcat is an open-source password cracking tool that can perform dictionary, brute force and combination attacks, it uses the power of GPUs to accelerate the cracking process, supports a wide variety of hashing algorithms and it can run on Windows, Linux and macOS. It's widely used for password recovery, security testing and penetration testing."
                     template.template("Hashcat", "hashcat -h", github.strip(), {"Hashcat tutorial for beginners": "https://resources.infosecinstitute.com/topic/hashcat-tutorial-beginners/","How to Crack Passwords Using Hashcat Tool?": "https://geekflare.com/password-cracking-with-hashcat/"})
-                    return
                 elif ask == "1":
                     github = "John the Ripper is a free and open-source password cracking software tool. It can be run on a variety of operating systems, including Windows, macOS, and Linux. It uses a combination of wordlists and rules to try and guess the password for a given hash or file, and can support a variety of different hash types, including those used for Unix and Windows passwords. John the Ripper is commonly used by security professionals and system administrators to audit the security of their systems and detect weak or easily guessable passwords."
                     template.template("John The Ripper", "john", github.strip(), {"Open-wall John": "https://www.openwall.com/john/","Password Cracking With John The Ripper": "https://www.section.io/engineering-education/password-cracking-with-john-the-ripper/","Tips and Tutorials of John": "https://www.varonis.com/blog/john-the-ripper"})
@@ -90,7 +89,7 @@ def main():
                 ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if ask == "0":
                     github = "RainbowCrack is a password cracking tool that uses a large precomputed table of hash values to speed up the process of cracking passwords. It is commonly used to crack Windows LM hashes and NTLM hashes, as well as other types of hashes such as those used in Linux and Unix-based systems. The tool is named after the 'rainbow table' data structure it uses to efficiently store the precomputed hash values."
-                    template.template("rcrack", "rcrack", github.strip(), {"How to use rainbow-crack tool": "https://null-byte.wonderhowto.com/how-to/rainbow-tables-create-use-them-crack-passwords-0131470/","Rainbow Tables & Rainbow-crack Cracking Passwords": "https://www.kalilinux.in/2021/03/rainbow-tables-rainbowcrack-kali-linux.html"})
+                    template.template("rainbowcrack", "rcrack", github.strip(), {"How to use rainbow-crack tool": "https://null-byte.wonderhowto.com/how-to/rainbow-tables-create-use-them-crack-passwords-0131470/","Rainbow Tables & Rainbow-crack Cracking Passwords": "https://www.kalilinux.in/2021/03/rainbow-tables-rainbowcrack-kali-linux.html"})
 
                 elif ask == "1":
                     github = "Ophcrack is a free, open-source password cracking tool specifically designed to crack Windows login passwords. It uses rainbow tables, a precomputed table of hash values, to crack passwords quickly. It can also recover LM and NTLM hashes, and it supports a variety of hash algorithms such as LM, NTLM, and MD5. The tool is available as a bootable CD or USB drive and can be used to recover lost or forgotten Windows passwords."
@@ -116,7 +115,7 @@ def main():
                     template.template("Cupp", "cupp", github.strip(), {"Cybrary CUPP Tool": "https://www.cybrary.it/blog/0p3n/using-cupp-tool-generate-powerful-password-lists/","How To Create Password List Using CUPP Tool": "https://programmercave0.github.io/blog/2019/10/10/How-to-create-Password-list-using-CUPP-tool-on-ubuntu","CUPP Tool Password Generator)": "https://www.geeksforgeeks.org/cupp-common-user-passwords-profiler/"})
                 elif ask == "2":
                     github = "Bopscrk (Before Outset Password Cracking is a tool to generate smart and powerful wordlists for targeted attacks. It is part of Black Arch Linux for as long as we can remember. It introduces personal information related to the target and combines every word and transforms it into possible passwords. It also contains a lyric pass module which allows it to search lyrics related to the favourite artist of the target and then include them into the wordlists."
-                    template.template("bopscrk", "bopscrk -i", github.strip(), {"Create Wordlist Like Pro by Zsecurity": "https://zsecurity.org/create-password-wordlists-like-a-pro-2/","Wordlist For Pentester": "https://www.hackingarticles.in/wordlists-for-pentester/"},method="go")
+                    template.template("bopscrk", "bopscrk -i", github.strip(), {"Create Wordlist Like Pro by Zsecurity": "https://zsecurity.org/create-password-wordlists-like-a-pro-2/","Wordlist For Pentester": "https://www.hackingarticles.in/wordlists-for-pentester/"},method="pip")
                 else:
                     break
 
@@ -132,7 +131,7 @@ def main():
                 ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if ask == "0":
                     github = "The Social Engineering Toolkit (SET) is an open-source penetration testing framework that is used to perform various social engineering attacks. It is designed to be used for the purposes of penetration testing and vulnerability assessments, and it can be used to perform attacks such as phishing, website attacks, and other forms of social engineering. The toolkit is written in Python and is available for Windows, Linux, and Mac OS X. It can be used to test the security of an organization's employees and to evaluate the effectiveness of security awareness training programs."
-                    template.template("Social Engineering Toolkit", "settoolkit", github.strip(), {"Phishing using SET": "https://www.golinuxcloud.com/social-engineering-toolkit-phishing/","Phishing using SET by Hengky Sanjaya": "https://medium.com/hengky-sanjaya-blog/social-engineering-toolkit-set-23be8b66aa18"})
+                    template.template("set", "setoolkit", github.strip(), {"Phishing using SET": "https://www.golinuxcloud.com/social-engineering-toolkit-phishing/","Phishing using SET by Hengky Sanjaya": "https://medium.com/hengky-sanjaya-blog/social-engineering-toolkit-set-23be8b66aa18"})
 
                 elif ask == "1":
                     github = "HiddenEye is a modern phishing tool with advanced functionality. It is written in Python and can be run on Windows, Linux, and Mac OS X. It allows you to perform various phishing attacks."
@@ -164,7 +163,7 @@ def main():
                 ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if ask == "0":
                     github = "zLogger is a Remote persistent keylogger it is written in python, and can generate executables that run on Windows and Linux, once executed on a system it’ll run the background, record every key-strike and report to the email specified when the keylogger was generated."
-                    template.template("ZLogger","pip install pynput > /dev/null 2>&1 && chmod +x * && python zlogger.py -h",github.strip(), {"ZLogger Tool in Medium": "https://medium.com/purple-team/make-a-keylogger-using-the-zlogger-tool-9945bc87922","ZLogger by Zsecurity": "https://zsecurity.org/hiddeneye-with-ngrok-all-in-one-phishing-solution/","ZLogger in Null-Byte": "https://null-byte.wonderhowto.com/forum/phish-with-hiddeneye-tool-with-advanced-feature-0323221/"},method="github", github_install="git clone https://github.com/z00z/ZLogger",github_check="ZLogger")
+                    template.template("ZLogger","python zlogger.py -h" ,github.strip(), {"ZLogger Tool in Medium": "https://medium.com/purple-team/make-a-keylogger-using-the-zlogger-tool-9945bc87922","ZLogger by Zsecurity": "https://zsecurity.org/hiddeneye-with-ngrok-all-in-one-phishing-solution/","ZLogger in Null-Byte": "https://null-byte.wonderhowto.com/forum/phish-with-hiddeneye-tool-with-advanced-feature-0323221/"},method="github", github_install="git clone https://github.com/z00z/ZLogger && pip install pynput > /dev/null 2>&1 && chmod +x *",github_check="ZLogger")
                 else:
                     break
         else:

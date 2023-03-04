@@ -65,7 +65,7 @@ try:
             "-n",
             nargs="?",
             metavar="Date",
-            const="",
+            const="latest",
             type=str,
             help="Date In The Format yyyy-mm-dd",
         )
@@ -155,8 +155,8 @@ try:
         elif args.cheatsheet:
             Cheat_sheet.main()
         elif args.news:
-            if args.news == "":
-                news.main()
+            if args.news == "latest" or args.news is None:
+                news.main(args.news)
             else:
                 news.main(args.news)
         elif args.cheatsheet:
@@ -255,7 +255,7 @@ try:
             main()
 
     def main():
-        update()
+        # update()
         os.system("chmod +x *")
         proc = subprocess.Popen([f"id"], stdout=subprocess.PIPE, shell=True)
         # there keyfor success output and noththere for error output

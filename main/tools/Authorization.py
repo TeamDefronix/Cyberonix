@@ -1,4 +1,4 @@
-from main.tools import banner, colors, template
+from main.tools import banner, colors, template,WEB_Application_Analysis
 from main import Cheat_sheet
 import os
 import requests
@@ -41,19 +41,7 @@ def main():
                 option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
                 if option == "0":
                     os.system("clear")
-                    github = "Burp Suite is an integrated platform for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initialmapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities. Burp gives you full control, letting you combine advanced manual techniques with state-of-the-art automation, to make your work faster, more effective, and more fun."
-                    template.template(
-                        "burpsuite",
-                        "burpsuite > /dev/null 2>&1",
-                        github.strip(),
-                        {
-                            "Top 10 tips for burpsuite": "https://medium.com/r3d-buck3t/top-10-tips-for-burp-suite-72212d22328f",
-                            "Setting up burbsuite": "https://thexssrat.medium.com/setting-up-burp-suite-b0a6767d3408",
-                            "Burp Suite: Do I need the professional edition?": "https://thexssrat.medium.com/burp-suite-do-i-need-the-professional-edition-bf8c87ce236e",
-                            "Burp Suite Extensions to help you Pentest": "https://medium.com/codex/burp-suite-extensions-to-help-you-pentest-97f22a7d7d4d",
-                            "FIND MORE resources here": "https://medium.com/search?q=burpsuite",
-                        },
-                    )
+                    WEB_Application_Analysis.burp_suite()
                 elif option == "1":
                     os.system("clear")
                     github = "Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education. It can be used to examine data from a live network or from a previously saved capture file. Wireshark provides a graphical user interface (GUI) for capturing and analyzing network traffic."

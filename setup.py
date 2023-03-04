@@ -10,6 +10,7 @@ def main():
     os.system("pip install -r requirements.txt")
     os.system("sudo apt install golang -y")
     os.system("go env -w GO111MODULE=on")
+    os.system("apt install php")
     create_symlink()
 def create_symlink():
     proc = subprocess.Popen([f"pwd"], stdout=subprocess.PIPE, shell=True)

@@ -53,7 +53,7 @@ class template:
                     elif method == "browser":
                         threading.Thread(
                             target=run_on_browser.main,
-                            args=self.command,
+                            args=(self.command,)
                         ).start()
                     elif method == "github":
                         if not os.path.isdir("Tools"):
