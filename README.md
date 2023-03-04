@@ -223,16 +223,16 @@ If you get Externally-Managed-Environment issue in your machine please check thi
                 - `Check Session Tokens Only Delivered Over Https`
                 - `Check If Http Strict Transport Security (Hsts) In Use`
         - ### Authentication
-            - `Burp Suite`
-            - `Wireshark`
-            - `Owasp Zap`
-            - `Nessus`
-            - `Hydra`
-            - `Beef`
-            - `Sqlmap`
-            - `Metasploit`
-            - `Nmap`
-            - `Penetration Testers Framework (Ptf)`
+            - `User Enumeration`
+            - `Authentication Bypass`
+            - `Vulnerable Remember Me Functionality`
+            - `Password Reset`
+            - `Captcha Bypass`
+            - `Autocomplete On`
+            - `Multifactor Authentication`
+            - `Logout Functionality`
+            - `Cache Management`
+            - `Default Credentials`
         - ### Session Management
             - `Owasp Zap`
             - `Burpsuite`
