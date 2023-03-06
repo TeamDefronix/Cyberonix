@@ -255,7 +255,7 @@ try:
             main()
 
     def main():
-        # update()
+        update()
         os.system("chmod +x *")
         proc = subprocess.Popen([f"id"], stdout=subprocess.PIPE, shell=True)
         # there keyfor success output and noththere for error output
