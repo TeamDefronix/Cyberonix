@@ -89,4 +89,3 @@ def github_getting_text(link, selector, indexvalue):
 
 if __name__ == "__main__":
     main()
-
