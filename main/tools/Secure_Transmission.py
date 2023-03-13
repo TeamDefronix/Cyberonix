@@ -20,7 +20,10 @@ def main():
         ]
         for i in range(len(list_vulns)):
             print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
-        vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if vulns == "0":
             os.system("clear")
             # github=github_getting_text("","")
@@ -88,7 +91,10 @@ def vuln_options():
     print(f"{colors.options}1) Tools")
     print(f"2) Write-ups")
     print(f"3) Go Back..")
-    ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    try:
+        ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    except KeyboardInterrupt:
+        template.exit_program()
     return ask
 
 
@@ -97,7 +103,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

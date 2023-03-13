@@ -6,7 +6,7 @@ def main():
     ██        ████   ██████  █████   ██████  ██    ██ ██ ██  ██ ██   ███   
     ██         ██    ██   ██ ██      ██   ██ ██    ██ ██  ██ ██ ██  ██ ██  
      ██████    ██    ██████  ███████ ██   ██  ██████  ██   ████ ██ ██   ██ 
-                                                                           v2.0
+                                                                           v1.0
                 \033[38;5;81mBy Team Metaxone Solution And Technical Navigator
 
     ''')
@@ -14,7 +14,7 @@ def main():
     print("\t\t\033[38;5;226mA Complete Recource Hub For Cyber Securty Community")
     print("\u001b[37m--------------------------------------------------------------------------------")
 def attack(name):
-    print(f"\u001b[32m\t\t\t\t{name}")
+    print(f"\u001b[32m\t\t\t\t{name.title()}")
     print("\u001b[37m--------------------------------------------------------------------------------")
 def wrap_text(text, width=80):
     wrapped_text = []

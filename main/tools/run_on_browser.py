@@ -1,7 +1,7 @@
 import os
 def main(URL):
         # print("[+] Opening url")
-        print("[+] Opening Article")
+        print("[+] Opening....")
         user=os.getlogin()
         if "root" in user:
             os.system(f"firefox {URL} > /dev/null 2>&1" )
@@ -11,4 +11,3 @@ def main(URL):
             os.system(f"firefox {URL} > /dev/null 2>&1")
             os.system(f"sudo chown {user}:{user} /run/user/{user}/gdm/Xauthority > /dev/null 2>&1")
             os.system(f"sudo chown {user}:{user} /home/{user}/.Xauthority > /dev/null 2>&1")
-

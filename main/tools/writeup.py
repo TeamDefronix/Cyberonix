@@ -1,4 +1,4 @@
-from main.tools import run_on_browser,colors,banner
+from main.tools import run_on_browser,colors,banner,template
 import os
 import threading
 def writeup(writeup_dist,name):
@@ -11,7 +11,10 @@ def writeup(writeup_dist,name):
         key.append("Go Back")
         for i in range(len(key)):
             print(colors.options,f"{i}) {key[i]}".title(),colors.reset)
-        option = input(f"\n {colors.select}Select An Option -> {colors.reset} ")
+        try:
+            option = input(f"\n {colors.select}Select An Option -> {colors.reset} ")
+        except KeyboardInterrupt:
+            template.exit_program()
         #1-9=int kdsjfhgkjds=int X to type cast safely 
         try:
             threading.Thread(target=run_on_browser.main, args=(writeup_dist[key[int(option)]],)).start()

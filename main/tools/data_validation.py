@@ -1,6 +1,5 @@
-import threading
 from bs4 import BeautifulSoup
-from main.tools import banner, template, waiting, writeup, colors, run_on_browser
+from main.tools import banner, template, writeup,colors
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -25,7 +24,10 @@ def main():
         ]
         for i in range(len(list_vulns)):
             print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
-        vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if vulns == "0":
             while True:
                 os.system("clear")
@@ -95,7 +97,7 @@ def main():
                                 "https://www.kali.org/tools/xsser/", "p", 3
                             )
                             template.template(
-                                "Xsser",
+                                "xsser",
                                 "xsser -h",
                                 github.strip(),
                                 {
@@ -205,7 +207,7 @@ def main():
                             print("\n[+] SQLMap")
                             github = github_getting_text("https://sqlmap.org/", "p", 0)
                             template.template(
-                                "Sqlmap",
+                                "sqlmap",
                                 "sqlmap -h",
                                 github.strip(),
                                 {
@@ -270,7 +272,7 @@ def main():
                                 3,
                             )
                             template.template(
-                                "Commix",
+                                "commix",
                                 "python commix.py -h",
                                 github.strip(),
                                 {
@@ -450,7 +452,10 @@ def vuln_options():
     print(f"{colors.options}1) Tools")
     print(f"2) Write-ups")
     print(f"3) Go Back")
-    ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    try:
+        ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    except KeyboardInterrupt:
+        template.exit_program()
     return ask
 
 
@@ -459,7 +464,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

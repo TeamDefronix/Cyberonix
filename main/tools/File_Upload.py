@@ -1,5 +1,4 @@
 from main.tools import banner, template, colors, writeup
-from main import Cheat_sheet
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -13,7 +12,10 @@ def main():
         list_attacks = ["Tools", "Writeups", "Go Back"]
         for i in range(len(list_attacks)):
             print(colors.options, f"{i+1}) {list_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "1":
             while True:
                 os.system("clear")
@@ -24,8 +26,10 @@ def main():
                     print(
                         colors.options, f"{i+1}) {list_tools[i]}".title(), colors.reset
                     )
-                option = input(f"\n {colors.select}Select an Option ->{colors.reset} ")
-
+                try:
+                    option = input(f"\n {colors.select}Select an Option ->{colors.reset} ")
+                except KeyboardInterrupt:
+                    template.exit_program()
                 if option == "1":
                     github = github_getting_text(
                         "https://github.com/almandin/fuxploider", 'p[dir="auto"]', 1
@@ -79,7 +83,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text
@@ -89,3 +93,4 @@ def github_getting_text(link, selector, indexvalue):
 
 if __name__ == "__main__":
     main()
+

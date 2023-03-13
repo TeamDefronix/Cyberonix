@@ -1,10 +1,13 @@
-
 from main.tools import *
 import os
+<<<<<<< Updated upstream
+=======
 def exit_program():
         os.system("clear")
         banner.main()
         print("\033[38;5;105m","[+] Thanks visit again".title())
+
+>>>>>>> Stashed changes
 def main():
     while True:
         os.system("clear")
@@ -16,7 +19,10 @@ def main():
         #for output with index
         for i in range(len(list_attacks)):
                 print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             print("\n[+] Information Gathering Section")
             os.system("clear")
@@ -54,9 +60,8 @@ def main():
             os.system("clear")
             Pentesting_Bug_Bounty.main()
         else:
-            exit_program()
+            print("[-] going back")
             return
-            
 
 if __name__ == "__main__": 
     main()

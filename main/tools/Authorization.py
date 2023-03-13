@@ -14,7 +14,10 @@ def main():
         list_attacks = ["Tools", "Writeups", "Burp Extensions", "Go Back"]
         for i in range(len(list_attacks)):
             print(colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             while True:
                 print("\n[+] Tools")
@@ -38,7 +41,10 @@ def main():
                     print(
                         colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset
                     )
-                option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                try:
+                    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                except KeyboardInterrupt:
+                    template.exit_program()
                 if option == "0":
                     os.system("clear")
                     WEB_Application_Analysis.burp_suite()
@@ -192,11 +198,11 @@ def main():
                     github = "The PenTesters Framework (PTF) is a Python script designed for Debian/Ubuntu/ArchLinux based distributions to create a similar and familiar distribution for Penetration Testing. PTF attempts to install all of your penetration testing tools (latest and greatest), compile them, build them, and make it so that you can install/update your distribution on any machine. Everything is organized in a fashion that is cohesive to the Penetration Testing Execution Standard (PTES) and eliminates a lot of things that are hardly used"
                     template.template(
                         "Penetration Testers Framework (PTF)",
-                        "chmod +x ptf && ./ptf",
+                        "./ptf",
                         github.strip(),
                         "no-writeups",
                         method="github",
-                        github_install="git clone https://github.com/trustedsec/ptf.git",
+                        github_install="git clone https://github.com/trustedsec/ptf.git && chmod +x ptf",
                         github_check="ptf",
                     )
                 else:
@@ -273,7 +279,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

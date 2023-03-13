@@ -14,7 +14,10 @@ def main():
         list_attacks = ["Tools", "Writeups", "Go Back"]
         for i in range(len(list_attacks)):
             print(colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             while True:
                 print("\n[+] Tools")
@@ -37,12 +40,16 @@ def main():
                     "TruffleHog",
                     "Gitleaks",
                     "SecretFinder",
+                    "Go Back"
                 ]
                 for i in range(len(list_attacks)):
                     print(
                         colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset
                     )
-                option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                try:
+                    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                except KeyboardInterrupt:
+                    template.exit_program()
                 if option == "0":
                     print("\n[+] Dirb")
                     os.system("clear")
@@ -138,7 +145,7 @@ def main():
                     os.system("clear")
                     github = "HTTPie is a command-line tool used to send HTTP requests and receive responses from a server. It is designed to be user-friendly and intuitive, with a simple syntax and easy-to-read output. HTTPie can be used to test and debug APIs, as well as interact with web services and applications. It supports various HTTP methods, data formats, and authentication methods, and can be customized with various options and configurations to suit specific use cases."
                     template.template(
-                        "HTTPie", "httpie -h", github.strip(), "no-writeups"
+                        "httpie", "httpie -h", github.strip(), "no-writeups"
                     )
                 elif option == "9":
                     print("\n[+] Metasploit")
@@ -156,14 +163,14 @@ def main():
                     github = """SecurityHeaders is a configuration management tool that focuses on securing web applications by helping administrators configure appropriate HTTP security headers. HTTP security headers are additional response headers that can be sent by a web server to a client's browser to instruct it to follow certain security-related behaviors. For example, the "Content-Security-Policy" header can be used to restrict the types of content that a web page can load, helping to prevent cross-site scripting (XSS) attacks."""
                     template.template(
                         "securityheaders",
-                        "pip install -r requirements.txt > /dev/null 2>&1 && python3 securityheaders.py -h",
+                        "python3 securityheaders.py -h",
                         github.strip(),
                         {
                             "Website": "https://securityheaders.com/",
                             "Securityheaders usage": "https://github.com/koenbuyens/securityheaders",
                         },
                         method="github",
-                        github_install="git clone https://github.com/koenbuyens/securityheaders.git",
+                        github_install="git clone https://github.com/koenbuyens/securityheaders.git && cd securityheaders && pip install -r requirements.txt",
                         github_check="securityheaders",
                     )
                 elif option == "11":
@@ -172,7 +179,7 @@ def main():
                     github = github_getting_text("https://sqlmap.org/", "p", 0)
                     template.template(
                         "sqlmap",
-                        "sqlmap",
+                        "sqlmap -h",
                         github.strip(),
                         {
                             "Usage Of Sqlmap": "https://github.com/sqlmapproject/sqlmap/wiki/Usage",
@@ -205,13 +212,13 @@ def main():
                     github = "SecretFinder is an open-source tool used to scan web applications for sensitive information and secrets, such as API keys, passwords, and tokens. It is designed to identify potential security vulnerabilities that could be exploited by attackers, and can be used in bug bounty hunting and vulnerability assessments. SecretFinder uses a combination of static analysis and dynamic analysis techniques to discover secrets, and can be customized with various options and configurations to suit specific use cases. It generates a report of its findings, which can be used to remediate identified vulnerabilities and improve the overall security of the web application. SecretFinder is a powerful and efficient tool that can help security professionals and developers identify potential security risks in their web applications."
                     template.template(
                         "secretFinder",
-                        "pip install -r requirements.txt > /dev/null 2>&1 && python3 SecretFinder.py -h",
+                        "python3 SecretFinder.py -h",
                         github.strip(),
                         {
                             "SecretFinder demo": "https://www.briskinfosec.com/tooloftheday/toolofthedaydetail/SecretFinder",
                         },
                         method="github",
-                        github_install="git clone https://github.com/m4ll0k/SecretFinder.git",
+                        github_install="git clone https://github.com/m4ll0k/SecretFinder.git && cd SecretFinder && pip install -r requirements.txt",
                         github_check="SecretFinder",
                     )
                 else:
@@ -245,7 +252,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

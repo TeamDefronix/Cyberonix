@@ -14,12 +14,14 @@ def main():
             "WEB Messaging",
             "WEB Storage SQL Injection",
             "CORS Implementation",
-            "Offline Web Applicatipn",
             "Go back",
         ]
         for i in range(len(list_vulns)):
             print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
-        vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if vulns == "0":
             github = "Web messaging is the ability to send realtime messages from the server to the client browser. It overrides the cross domain communication problem in different domains, protocols or ports"
             template.template(
@@ -52,7 +54,7 @@ def main():
         elif vulns == "2":
             github = "Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served."
             template.template(
-                "WEB Storage SQL Injection",
+                "CORS implementation",
                 "no-tools",
                 github.strip(),
                 {
@@ -75,7 +77,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

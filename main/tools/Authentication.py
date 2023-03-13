@@ -24,7 +24,10 @@ def main():
         ]
         for i in range(len(list_vulns)):
             print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
-        vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if vulns == "0":
             os.system("clear")
             template.template(
@@ -82,7 +85,7 @@ def main():
                 "",
                 {
                     "CAPTCHA BYPASS TECHNIQUES !": "https://honeyakshat999.medium.com/captcha-bypass-techniques-f768521516b2",
-                    "Bypass Captcha🤗(Google reCAPTCHA)": "https://twitter.com/Aacle_/status/1586735203481161728?t=Vz4U17f1nHQzoXRUuMVDiA&s=19",
+                    "Bypass Captcha (Google reCAPTCHA)": "https://twitter.com/Aacle_/status/1586735203481161728?t=Vz4U17f1nHQzoXRUuMVDiA&s=19",
                     "Captcha Bypass Techniques": "https://github.com/harsh-bothra/learn365/blob/main/days/day31.md",
                 },
             )
@@ -94,7 +97,7 @@ def main():
                 "no-tools",
                 "",
                 {
-                    " Password field with autocomplete enabled ": "https://portswigger.net/kb/issues/00500800_password-field-with-autocomplete-enabled",
+                    "Password field with autocomplete enabled ": "https://portswigger.net/kb/issues/00500800_password-field-with-autocomplete-enabled",
                     "Finding and Fixing Vulnerabilities in AutoComplete Not Disabled ": "https://www.beyondsecurity.com/scan-pentest-network-vulnerabilities-autocomplete-not-disabled",
                 },
             )
@@ -120,7 +123,7 @@ def main():
                 "",
                 {
                     "Testing for Logout Functionality": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality",
-                    " Test Cases For Logout | Test Scenarios For Logout ": "https://www.qaacharya.in/2019/06/test-cases-scenarios-for-logout.html",
+                    "Test Cases For Logout | Test Scenarios For Logout ": "https://www.qaacharya.in/2019/06/test-cases-scenarios-for-logout.html",
                 },
             )
 
@@ -155,7 +158,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text
