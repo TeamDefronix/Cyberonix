@@ -20,8 +20,6 @@ body:
         2. Click on '....'
         3. Scroll down to '....'
         4. See error
-      validations:
-        required: true
 
   - type: input
     id: version
@@ -30,8 +28,7 @@ body:
       description: "Use `python -v`."
       placeholder: |
         branch-commit
-      validations:
-        required: true
+      required: true
 
   - type: textarea
     id: steps
