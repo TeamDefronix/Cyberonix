@@ -42,9 +42,6 @@ try:
         for i in range(3):
             print(f"[!] Redirecting in ...{3-i}sec\r".title(),end="")
             time.sleep(i)
-
-<<<<<<< Updated upstream
-=======
     def starting():
         parser = argparse.ArgumentParser(
             description="Cyberonix is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.",
