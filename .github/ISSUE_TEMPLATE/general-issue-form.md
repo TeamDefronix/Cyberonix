@@ -1,5 +1,5 @@
 ---
-name: general-issue-form.yaml
+name: general-issue-form
 about: If you get any issues in this tool you can report it here
 title: ''
 labels: ''
