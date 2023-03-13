@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 from main.tools import banner, colors, template
 import os
 import requests
-from bs4 import BeautifulSoup
 
 
 def main():
@@ -19,7 +18,10 @@ def main():
         ]
         for i in range(len(list_attacks)):
             print(colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             print("\n[+] GoldenEye")
             github = github_getting_text(
@@ -102,7 +104,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

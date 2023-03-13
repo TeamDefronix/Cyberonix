@@ -14,7 +14,10 @@ def main():
         list_attacks = ["Tools", "Writeups", "Burp Extensions", "Go Back"]
         for i in range(len(list_attacks)):
             print(colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             while True:
                 print("\n[+] Tools")
@@ -26,7 +29,6 @@ def main():
                     "BurpSuite",
                     "Nikto",
                     "Nmap",
-                    "Arachni",
                     "Wapiti",
                     "Nessus",
                     "Nuclei",
@@ -38,7 +40,10 @@ def main():
                     print(
                         colors.options, f"{i}) {list_attacks[i]}".title(), colors.reset
                     )
-                option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                try:
+                    option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+                except KeyboardInterrupt:
+                    template.exit_program()
                 if option == "0":
                     os.system("clear")
                     # name,command,discription,writeup,link=True,method="kali",github_install="",github_check=True
@@ -92,18 +97,6 @@ def main():
                     )
                 elif option == "4":
                     os.system("clear")
-                    github = "Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of modern web applications. It is versatile enough to cover a great deal of use cases, ranging from a simple command line scanner utility, to a global high performance grid of scanners, to a Ruby library allowing for scripted audits, to a multi-user multi-scan web collaboration platform. In addition, its simple REST API makes integration a cinch."
-                    template.template(
-                        "Arachni",
-                        "cd bin && chmod +x * && ./arachni -h | head",
-                        github.strip(),
-                        "no-writeups",
-                        method="github",
-                        github_install="wget -q --show-progress https://github.com/Arachni/arachni/releases/download/v1.6.1.3/arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz && tar -xvzf arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz && rm arachni-1.6.1.3-0.6.1.1-linux-x86_64.tar.gz ",
-                        github_check="arachni-1.6.1.3-0.6.1.1",
-                    )
-                elif option == "5":
-                    os.system("clear")
                     github = github_getting_text(
                         "https://github.com/wapiti-scanner/wapiti", 'p[dir="auto"]', 6
                     )
@@ -118,7 +111,7 @@ def main():
                             "complete guide to using wapiti web vulnerability scanner to keep your web applications websites secure": "https://linuxsecurity.com/features/complete-guide-to-using-wapiti-web-vulnerability-scanner-to-keep-your-web-applications-websites-secure",
                         },
                     )
-                elif option == "6":
+                elif option == "5":
                     os.system("clear")
                     github = github_getting_text(
                         "https://www.techtarget.com/searchnetworking/definition/Nessus",
@@ -127,7 +120,7 @@ def main():
                     )
                     template.template(
                         "nessus",
-                        "nessus",
+                        "nessus --help",
                         github.strip(),
                         {
                             "How To: Run Your First Vulnerability Scan with Nessus": "https://www.tenable.com/blog/how-to-run-your-first-vulnerability-scan-with-nessus",
@@ -138,7 +131,7 @@ def main():
                         link="https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.4.2-debian9_amd64.deb",
                         method="deb",
                     )
-                elif option == "7":
+                elif option == "6":
                     os.system("clear")
                     github = github_getting_text(
                         "https://github.com/projectdiscovery/nuclei", 'p[dir="auto"]', 3
@@ -154,7 +147,7 @@ def main():
                             "DevSecOps 101 Part 3: Scanning Live Web Applications with Nuclei": "https://escape.tech/blog/devsecops-part-iii-scanning-live-web-applications",
                         },
                     )
-                elif option == "8":
+                elif option == "7":
                     os.system("clear")
                     github = github_getting_text(
                         "https://learn.microsoft.com/en-us/windows/win32/win7appqual/fiddler-web-debugger-tool/",
@@ -163,14 +156,14 @@ def main():
                     )
                     template.template(
                         "Fiddler",
-                        "chmod u+x fiddler-everywhere-4.1.2.AppImage && su -c ./fiddler-everywhere-4.1.2.AppImage $SUDO_USER > /dev/null 2>&1",
+                        "mono Fiddler.exe",
                         github.strip(),
                         "no-writeups",
                         method="github",
-                        github_install="wget -q --show-progress https://downloads.getfiddler.com/linux/fiddler-everywhere-4.1.2.AppImage && mkdir Fiddler_Everywhere && mv fiddler-everywhere-4.1.2.AppImage Fiddler_Everywhere",
-                        github_check="Fiddler_Everywhere",
+                        github_install="apt-get install mono-complete -y && wget http://telerik-fiddler.s3.amazonaws.com/fiddler/fiddler-linux.zip && unzip fiddler-linux.zip -d fiddler",
+                        github_check="fiddler",
                     )
-                elif option == "9":
+                elif option == "8":
                     os.system("clear")
                     github = "The PenTesters Framework (PTF) is a Python script designed for Debian/Ubuntu/ArchLinux based distributions to create a similar and familiar distribution for Penetration Testing. PTF attempts to install all of your penetration testing tools (latest and greatest), compile them, build them, and make it so that you can install/update your distribution on any machine. Everything is organized in a fashion that is cohesive to the Penetration Testing Execution Standard (PTES) and eliminates a lot of things that are hardly used"
                     template.template(
@@ -249,7 +242,7 @@ def github_getting_text(link, selector, indexvalue):
     URL = link
     try:
         r = requests.get(URL)
-        soup = BeautifulSoup(r.content, "html5lib")
+        soup = BeautifulSoup(r.content, "html.parser")
         paras = soup.select(selector)
         # check index value from test file
         return paras[indexvalue].text

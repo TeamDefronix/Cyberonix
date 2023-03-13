@@ -59,7 +59,7 @@ class template:
                         if not os.path.isdir("Tools"):
                             os.system("mkdir Tools")
                         if os.path.exists(f"Tools/{self.github_check}"):
-                            print(f"{colors.green}[+] It Is Installed{colors.reset}")
+                            print(f"{colors.green}[+] Installed")
                             print(f"[+] It Is Installed In Your Kali{colors.reset}")
                             run = input(
                                 f"{colors.blue}[+] Do You Want To Run?(y/n):{colors.reset}"
@@ -99,8 +99,16 @@ def tool_writeups(name,check="no-writeups", tool_check="no-tools"):
     if check != "no-writeups":
         print(f"2) Write Ups")
     print(f"3) Go Back..")
-    ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    try:
+        ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
+    except KeyboardInterrupt:
+        exit_program()
     return ask
+def exit_program():
+    os.system("clear")
+    banner.main()
+    print("\033[38;5;105m", "[+] Thanks visit again".title())
+    exit()
 
 
 def check_installed(name, run_arg):
@@ -111,14 +119,20 @@ def check_installed(name, run_arg):
     if "install ok installed" not in there.decode():
         print(f"\n{colors.red}[+] Not Installed")
         print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
-        install = input(
+        try:
+            install = input(
             f"{colors.blue}Do You Want To Install The Tool?(y/n):{colors.reset}"
         )
+        except KeyboardInterrupt:
+            exit_program()
         if install.lower() == "yes" or install.lower() == "y":
             os.system(f"apt install {name} -y")
-            download = input(
+            try:
+                download = input(
                 f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}"
             )
+            except KeyboardInterrupt:
+                exit_program()
             if (
                 download == "y"
                 or download == "Y"
@@ -140,9 +154,12 @@ def check_installed(name, run_arg):
     else:
         print(f"{colors.green}[+] Installed")
         print(f"[+] It Is Installed In Your Kali{colors.reset}")
-        download = input(
+        try:
+            download = input(
             f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}"
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download == "y" or download == "Y" or download == "Yes" or download == "yes":
             # os.system(f"{run_arg}")
             if run_arg == "kismet":
@@ -168,24 +185,33 @@ def pip_install(name, run_arg):
     (there, nothere) = proc.communicate()
     if there:
         print(f"{colors.green}[+] Installed")
-        print(f"[+] It Is Installed In Your Kali{colors.reset}\n")
-        download = input(
-            f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset} "
+        print(f"[+] It Is Installed In Your Kali{colors.reset}")
+        try:
+            download = input(
+            f"{colors.blue}Do You Want To Run The Tool?(y/n): {colors.reset} "
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download.lower() == "y" or download.lower() == "yes":
             os.system(f"{run_arg}")
     else:
         print(f"{colors.red}\n[+] It Is Not Installed In Your Kali{colors.reset}")
-        download = input(
+        try:
+            download = input(
             f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset} "
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download.lower() == "y" or download.lower() == "yes":
             os.system(f"pip install {name}")
             # os.system("go install github.com/projectdiscovery/katana/cmd/katana@latest")
             # os.system(f'sudo cp ~/go/bin/{name} /usr/bin')
-            download = input(
+            try:
+                download = input(
                 f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset}"
             )
+            except KeyboardInterrupt:
+                exit_program()
             if download.lower() == "y" or download.lower() == "yes":
                 os.system(f"{run_arg}")
 
@@ -195,24 +221,34 @@ def which_check(name, link, run_arg):
     (there, nothere) = proc.communicate()
     if there:
         print(f"{colors.green}[+] Installed")
-        print(f"[+] It Is Installed In Your Kali{colors.reset}\n")
-        download = input(
-            f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset} "
+        print(f"[+] It Is Installed In Your Kali{colors.reset}")
+        try:
+            download = input(
+            f"{colors.blue}Do You Want To Run The Tool?(y/n): {colors.reset} "
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download.lower() == "y" or download.lower() == "yes":
             os.system(f"{run_arg}")
     else:
+        print(f"{colors.red}[+] Not Installed")
         print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
-        download = input(
+        try:
+            download = input(
             f"{colors.blue}[+] Do You Want To Install It?(y/n):{colors.reset} "
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download.lower() == "y" or download.lower() == "yes":
             os.system(f"go install {link}")
             # os.system("go install github.com/projectdiscovery/katana/cmd/katana@latest")
             os.system(f"sudo cp ~/go/bin/{name} /usr/bin")
-            download = input(
+            try:
+                download = input(
                 f"{colors.blue}\nDo You Want To Run The Tool?(y/n): {colors.reset}"
             )
+            except KeyboardInterrupt:
+                exit_program()
             if download.lower() == "y" or download.lower() == "yes":
                 os.system(f"{run_arg}")
 
@@ -225,16 +261,22 @@ def deb_install(name, command, link):
     if "install ok installed" not in there.decode():
         print(f"{colors.red}[+] Not Installed")
         print(f"{colors.red}[+] It Is Not Installed In Your Kali{colors.reset}")
-        install = input(
+        try:
+            install = input(
             f"{colors.blue}Do You Want To Install The Tool?(y/n):{colors.reset}"
         )
+        except KeyboardInterrupt:
+            exit_program()
         if install.lower() == "yes" or install.lower() == "y":
             if not os.path.exists(f"Tools/{link.split('/')[-1]}"):
-                os.system(f"wget {link} -O Tools/{link.split('/')[-1]} 2>/dev/null")
-            os.system(f"dpkg -i Tools/{link.split('/')[-1]} >/dev/null")
-            install = input(
+                os.system(f"wget {link} -O Tools/{link.split('/')[-1]} ")
+            os.system(f"dpkg -i Tools/{link.split('/')[-1]} ")
+            try:
+                install = input(
                 f"{colors.blue}Do you want to run the tool?(y/n):{colors.reset}"
             )
+            except KeyboardInterrupt:
+                exit_program()
             if install.lower() == "y" or install.lower == "yes":
                 if command == "nessus":
                     os.system("systemctl start nessusd.service")
@@ -242,9 +284,12 @@ def deb_install(name, command, link):
                     print(
                         f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}"
                     )
-                    use = input(
+                    try:
+                        use = input(
                         f"{colors.blue}[+] Do You Want To Configure Nessus?(y/n):{colors.reset}"
                     )
+                    except KeyboardInterrupt:
+                        exit_program()
                     if use == "y" or use == "Y" or use == "Yes" or use == "yes":
                         run_on_browser.main("https://localhost:8834/")
                 else:
@@ -252,9 +297,12 @@ def deb_install(name, command, link):
     else:
         print(f"{colors.green}[+] Installed")
         print(f"[+] It Is Installed In Your Kali{colors.reset}")
-        download = input(
+        try:
+            download = input(
             f"{colors.blue}Do You Want To Run The Tool?(y/n):{colors.reset}"
         )
+        except KeyboardInterrupt:
+            exit_program()
         if download.lower() == "y" or download.lower() == "yes":
             if command == "nessus":
                 os.system("systemctl start nessusd.service")
@@ -262,9 +310,12 @@ def deb_install(name, command, link):
                 print(
                     f"{colors.blue}[+] YOU CAN CHECK IT'S WRITE UPS FOR MORE INFO{colors.reset}"
                 )
-                use = input(
+                try:
+                    use = input(
                     f"{colors.blue}[+] Do You Want To Configure Nessus?(y/n):{colors.reset}"
                 )
+                except KeyboardInterrupt:
+                    exit_program()
                 if use == "y" or use == "Y" or use == "Yes" or use == "yes":
                     run_on_browser.main("https://localhost:8834/")
             else:

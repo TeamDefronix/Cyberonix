@@ -9,7 +9,10 @@ def main():
         list_root_attacks=["Tool","Writeups","go back"]
         for i in range(len(list_root_attacks)):
             print(colors.options, f"{i}) {list_root_attacks[i]}".title(), colors.reset)
-        option = input(f"\n {colors.select}Select An Option ->{colors.reset}")
+        try:
+            option = input(f"\n {colors.select}Select An Option ->{colors.reset}")
+        except KeyboardInterrupt:
+            template.exit_program()
         if option == "0":
             while True:
                 os.system("clear")
@@ -18,9 +21,12 @@ def main():
                 list_attacks=["SSLstript","Bettercap","Ettercap (Graphical of bettercap)","sslyze","O-Saft","sslscan","SSLLabs","go back"]
                 for i in range(len(list_attacks)):
                     print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
-                option2 = input(f"\n {colors.select}Select An Option ->  {colors.reset}")
+                try:
+                    option2 = input(f"\n {colors.select}Select An Option ->  {colors.reset}")
+                except KeyboardInterrupt:
+                    template.exit_program()
                 if option2=="0":
-                    print(f"\n[+] SSLstript")
+                    print(f"\n[+] SSLstrip")
                     os.system("clear")
                     github = "SSLStrip is a powerful hacking tool that enables an attacker to intercept and manipulate HTTPS traffic between a user and a website. The tool works by downgrading HTTPS connections to insecure HTTP connections, which allows an attacker to eavesdrop on the traffic and steal sensitive information such as login credentials, credit card numbers, and other personal data. SSLStrip is commonly used in phishing attacks and other cybercriminal activities. It can be a potent weapon in the hands of skilled hackers who are looking to exploit vulnerabilities in web security."
                     template.template("sslstrip","sslstrip -h",github.strip(),{"SSLstrip Tutorial Beginner":"https://www.computerweekly.com/tip/Sslstrip-tutorial-for-penetration-testers","SSLstip how awesome tool is ts":"https://infosecwriteups.com/ssl-strip-how-awesome-it-is-a0eb79e28bcc","ARP Spoofing and SSL Stripping":"https://levelup.gitconnected.com/ethical-hacking-part-10-arp-spoofing-ssl-strip-ea5f0cc892f3"})
@@ -33,7 +39,7 @@ def main():
                     print("\n[+] Ettercap (Graphical of bettercap)")
                     os.system("clear")
                     github="Ettercap is a popular open-source GUI network security tool that is used for monitoring and analyzing network traffic in real-time. It can be used to perform various types of attacks such as ARP spoofing, IP and MAC address spoofing, session hijacking, DNS spoofing, etc. Ettercap is commonly used by network administrators and security experts to test the security of their own networks and to identify potential vulnerabilities. It supports various protocols like TCP, UDP, ICMP, and can also decode SSL traffic. Ettercap can be used on various operating systems including Windows, Linux, and Mac OS X."
-                    template.template("ettercap-graphical","ettercap -h",github.strip(),{"SSLStriping Using Ettercap by NULL-BYTE': 'https://null-byte.wonderhowto.com/forum/struggling-perform-mitm-attack-using-ettercap-and-sslstrip-0165933/','HSTS Hijacing': 'https://github.com/bettercap/caplets/blob/master/hstshijack/README.md",})
+                    template.template("ettercap-graphical","ettercap -G",github.strip(),{"SSLStriping Using Ettercap by NULL-BYTE': 'https://null-byte.wonderhowto.com/forum/struggling-perform-mitm-attack-using-ettercap-and-sslstrip-0165933/','HSTS Hijacing': 'https://github.com/bettercap/caplets/blob/master/hstshijack/README.md",})
                 elif option2=="3":
                     print("\n[+] sslyze")
                     os.system("clear")
