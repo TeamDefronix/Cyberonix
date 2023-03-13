@@ -1,13 +1,11 @@
 from main.tools import *
 import os
-<<<<<<< Updated upstream
-=======
+
 def exit_program():
         os.system("clear")
         banner.main()
         print("\033[38;5;105m","[+] Thanks visit again".title())
 
->>>>>>> Stashed changes
 def main():
     while True:
         os.system("clear")
