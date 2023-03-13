@@ -3,7 +3,7 @@ import os
 import subprocess
 from main import *
 from main.tools import banner,colors
-import time
+import time,argparse
 
 def exit_program():
     os.system("clear")
@@ -296,7 +296,7 @@ try:
             main()
 
     def main():
-        update()
+        # update()
         os.system("chmod +x *")
         proc = subprocess.Popen([f"id"], stdout=subprocess.PIPE, shell=True)
         #there keyfor success output and noththere for error output
@@ -329,7 +329,7 @@ try:
                 exit_program()
     #to run file separately
     if __name__ == "__main__": 
-        main()
+        starting()
 except KeyboardInterrupt:
     exit_program()
 except Exception as err:

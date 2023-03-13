@@ -1,8 +1,7 @@
 from bs4 import BeautifulSoup
-from main.tools import banner, template, writeup,colors
+from main.tools import banner, template, writeup, colors
 import os
 import requests
-from bs4 import BeautifulSoup
 
 
 def main():

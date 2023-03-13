@@ -303,6 +303,7 @@ def outputfunc(addr, line):
 
 
 def http_status_code(path="", url="", output=""):
+
         link=domain()['check_http'](url)
         banner.main()
         banner.attack("HTTP Status Code")
@@ -466,6 +467,7 @@ def http_status_code(path="", url="", output=""):
 def password_gen(
     upper=True, lower=True, digit=True, punctuation=True, length="8", check=True
 ):
+
         banner.main()
         banner.attack("Password Generators")
         ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
@@ -527,6 +529,7 @@ def remove_dublicates(location,output=''):
         
 
 def screenshot(path="", url="",output=''):
+
         link=domain()['check_http'](url)
         banner.main()
         banner.attack("Screenshotting")

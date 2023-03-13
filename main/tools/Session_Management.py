@@ -120,7 +120,7 @@ def main():
                     )
                     template.template(
                         "nessus",
-                        "nessus --help",
+                        "nessus",
                         github.strip(),
                         {
                             "How To: Run Your First Vulnerability Scan with Nessus": "https://www.tenable.com/blog/how-to-run-your-first-vulnerability-scan-with-nessus",
@@ -138,7 +138,7 @@ def main():
                     )
                     template.template(
                         "nuclei",
-                        "nuclei",
+                        "nuclei --help",
                         github.strip(),
                         {
                             "Nuclei - Automated Vulnerability Scanning Tool": "https://allabouttesting.org/nuclei-automated-vulnerability-scanning-tool/",

@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from main.tools import banner, colors, template
 import os
 import requests
+from bs4 import BeautifulSoup
 
 
 def main():
