@@ -4,7 +4,7 @@ labels: [bug]
 
 body:
   - type: markdown
-    attributes:
+    attributes:"a random key!"
       value: |
         _Before reporting:_ search [existing issues](https://github.com/TeamMetaxone/Cyberonix/issues) (both open and closed).
         If you need real-time help, join us on Discord. Thank you for helping us improve!
