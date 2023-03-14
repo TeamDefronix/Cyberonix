@@ -2,6 +2,7 @@
 import os
 import subprocess
 from main.tools import banner,colors
+import cyberonix
 
 def exit_program():
     os.system("clear")
@@ -37,11 +38,7 @@ try:
         os.system("clear")
         banner.main()
         banner.attack("Setup Completed")
-        try:
-            subprocess.run('cyberonix',shell=True, check = True)
-        except Exception as err:
-            os.system("python3 cyberonix.py")
-        exit()
+        cyberonix.main()
     if __name__ == "__main__":
         main()
 except KeyboardInterrupt:
