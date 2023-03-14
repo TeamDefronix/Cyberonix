@@ -79,6 +79,7 @@ def ipinformation(url='',path='',output=''):
                             valid=ip_valid(url)
                             if valid==1:
                                 try:
+                                    temp=url
                                     url = f"http://ip-api.com/json/{url}"
                                     response = requests.get(url)
                                 except requests.exceptions.ConnectionError:
@@ -90,8 +91,8 @@ def ipinformation(url='',path='',output=''):
 
                                 data = response.json()
                                 if output != "":
-                                        outputfunc(output, f"\t\t\t{url}")
-                                print(f"{colors.blue}[+]\t\t\t{url}{colors.reset}")
+                                        outputfunc(output, f"\t{temp}")
+                                print(f"{colors.blue}\t{temp}{colors.reset}")
                                 for key, value in data.items():
                                     if output != "":
                                         outputfunc(output, f"{key}\t --> \t{value}")
@@ -110,6 +111,7 @@ def ipinformation(url='',path='',output=''):
         else:
                 if valid==1:
                     try:
+                        temp=url
                         url = f"http://ip-api.com/json/{url}"
                         response = requests.get(url)
                     except requests.exceptions.ConnectionError:
@@ -121,8 +123,8 @@ def ipinformation(url='',path='',output=''):
 
                     data = response.json()
                     if output != "":
-                            outputfunc(output, f"\t\t\t{url}")
-                    print(f"{colors.blue}[+]\t\t\t{url}{colors.reset}")
+                            outputfunc(output, f"\t{temp}")
+                    print(f"{colors.blue}[+]\t{temp}{colors.reset}")
                     for key, value in data.items():
                         if output != "":
                             outputfunc(output, f"{key}\t --> {value}")
@@ -171,6 +173,11 @@ def dnsrecords(url="", names='',path='',output=''):
                                         print(f"{colors.red}[-]{url}\t -->\t{name}\t -->\tHost {domain} Not Found{colors.reset}")
                                         if output != "":
                                             outputfunc(output, f"{url}\t -->\t{name}\t -->\tHost {domain} Not Found")
+                                    except Exception as err:
+                                        print(f"{colors.red}[-]{url}\t -->\t{name}\t -->\terr:{err}{colors.reset}")
+                                        if output != "":
+                                            outputfunc(output, f"{url}\t -->\t{name}\t -->\terr:{err}")
+
                             else:
                                 print(f"{colors.red}[-]{url}\t -->\tYou Have Entered IP{colors.reset}")
                                 if output != "":
@@ -204,6 +211,11 @@ def dnsrecords(url="", names='',path='',output=''):
                         print(f"{colors.red}[-]{url}\t -->\t{name}\t -->\tHost {domain} Not Found{colors.reset}")
                         if output != "":
                             outputfunc(output, f"{url}\t -->\t{name}\t -->\tHost {domain} Not Found")
+                    except Exception as err:
+                        print(f"{colors.red}[-]{url}\t -->\t{name}\t -->\terr:{err}{colors.reset}")
+                        if output != "":
+                            outputfunc(output, f"{url}\t -->\t{name}\t -->\terr:{err}")
+
         else:
             print(f"{colors.red}[-] Something Went Wrong\n[!] Maybe You have Entered Ip")
 
@@ -241,15 +253,15 @@ def exit_program():
 def asnrecord(path="", url="", output=""):
         banner.main()
         banner.attack("ASN")
-        valid=ip_valid(url)
-        if valid==1:
-            if path != "":
-                try:
-                    f = open(path, "r")
-                    urls = f.read()
-                    urls = urls.split("\n")
-                    for url in urls:
-                        if url != "":
+        if path != "":
+            try:
+                f = open(path, "r")
+                urls = f.read()
+                urls = urls.split("\n")
+                for url in urls:
+                    if url != "":
+                        valid=ip_valid(url)
+                        if valid==1:
                             try:
                                 ipwhois = IPWhois(url)
                                 result = ipwhois.lookup_rdap()
@@ -260,20 +272,24 @@ def asnrecord(path="", url="", output=""):
                                 )
                             except KeyboardInterrupt:
                                 exit_program()
-                            except:
+                            except Exception as err:
                                 if output != "":
-                                    outputfunc(output, f"{url}\t --> Something Went Wrong")
-                                print(
-                                    f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong{colors.reset}"
-                                )
-                except KeyboardInterrupt:
-                    exit_program()
-                except Exception as err:
-                    print(
-                        f"{colors.red}[-] Something Went Wrong\n[!] {err}\n[!] Check Your File location"
-                    )
-            else:
-                try:
+                                    outputfunc(output, f"{url}\t --> err:{err}")
+                                    print(
+                                        f"{colors.red}[+] {url}\t --> {colors.red}err:{err}{colors.reset}"
+                                    )
+                        else:
+                            print(f"{colors.red}[-] Something Went Wrong\n[!] Maybe You have Entered Domain Or Ip Range Is Wrong")
+            except KeyboardInterrupt:
+                exit_program()
+            except Exception as err:
+                print(
+                    f"{colors.red}[-] Something Went Wrong\n[!] {err}\n[!] Check Your File location"
+                )
+        else:
+            try:
+                valid=ip_valid(url)
+                if valid==1:
                     ipwhois = IPWhois(url)
                     result = ipwhois.lookup_rdap()
                     if output != "":
@@ -281,18 +297,16 @@ def asnrecord(path="", url="", output=""):
                     print(
                         f"{colors.blue}[+] {url}\t --> {colors.green}{result['asn']}{colors.reset}"
                     )
-                except KeyboardInterrupt:
-                    exit_program()
-                except:
-                    if output != "":
-                        outputfunc(output, f"{url}\t --> Something Went Wrong")
-                    print(
-                        f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong{colors.reset}"
-                    )
-        else:
-            print(f"{colors.red}[-] Something Went Wrong\n[!] Maybe You have Entered Domain Or Ip Range Is Wrong")
-
-
+                else:
+                    print(f"{colors.red}[-] Something Went Wrong\n[!] Maybe You have Entered Domain Or Ip Range Is Wrong")
+            except KeyboardInterrupt:
+                exit_program()
+            except:
+                if output != "":
+                    outputfunc(output, f"{url}\t --> Something Went Wrong")
+                print(
+                    f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong{colors.reset}"
+                )
 
 
 def outputfunc(addr, line):
@@ -303,7 +317,6 @@ def outputfunc(addr, line):
 
 
 def http_status_code(path="", url="", output=""):
-
         link=domain()['check_http'](url)
         banner.main()
         banner.attack("HTTP Status Code")
@@ -346,35 +359,34 @@ def http_status_code(path="", url="", output=""):
                                             try:
                                                 response = requests.get(url, headers=headers, timeout=20)
                                                 status = str(response.status_code)
+                                                new_url=str(response.url)
                                                 if status[0] == "1":
                                                     print(
-                                                        f"{colors.blue} --> {colors.light_blue}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.light_blue}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                                 elif status[0] == "2":
                                                     print(
-                                                        f"{colors.blue} --> {colors.green}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.green}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                                 elif status[0] == "3":
                                                     print(
-                                                        f"{colors.blue} --> {colors.yellow}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.yellow}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                                 elif status[0] == "4":
                                                     print(
-                                                        f"{colors.blue} --> {colors.red}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.red}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                                 elif status[0] == "5":
                                                     print(
-                                                        f"{colors.blue} --> {colors.purple}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.purple}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                                 else:
                                                     print(
-                                                        f"{colors.blue} --> {colors.green}{status}{colors.reset}"
+                                                        f"{colors.blue} --> {colors.green}{status} -->{colors.blue} {new_url}{colors.reset}"
                                                     )
                                             except Exception as err:
                                                 if "timed out" in str(err):
-                                                    err = "Connection Time Outed"
-                                                else:
-                                                    err = "Something Went Wrong"
+                                                    err = "Connection Time Out"
                                                 print(
                                                     f"{colors.red} --> {colors.red}{err}{colors.reset}"
                                                 )
@@ -396,9 +408,7 @@ def http_status_code(path="", url="", output=""):
                                             outputfunc(output, f"{url}\t --> {status}")
                                     except Exception as err:
                                         if "timed out" in str(err):
-                                            err = "Connection Time Outed"
-                                        else:
-                                            err = "Something Went Wrong"
+                                            err = "Connection Time Out"
                                         if output != "":
                                             outputfunc(output, f"{url}\t --> {err}")
                                         print(
@@ -448,9 +458,7 @@ def http_status_code(path="", url="", output=""):
                                     outputfunc(output, f"{url}\t --> {status}")
                             except Exception as err:
                                 if "timed out" in str(err):
-                                    err = "Connection Time Outed"
-                                else:
-                                    err = "Something Went Wrong"
+                                    err = "Connection Time Out"
                                 if output != "":
                                     outputfunc(output, f"{url}\t --> {err}")
                                 print(
@@ -467,7 +475,6 @@ def http_status_code(path="", url="", output=""):
 def password_gen(
     upper=True, lower=True, digit=True, punctuation=True, length="8", check=True
 ):
-
         banner.main()
         banner.attack("Password Generators")
         ascii_lowercase = "abcdefghijklmnopqrstuvwxyz"
@@ -529,7 +536,6 @@ def remove_dublicates(location,output=''):
         
 
 def screenshot(path="", url="",output=''):
-
         link=domain()['check_http'](url)
         banner.main()
         banner.attack("Screenshotting")
@@ -616,7 +622,7 @@ def screenshot(path="", url="",output=''):
 def domain():
     def check_http(url):
         urls=[]
-        if "http://" and "https://" not in url:
+        if "https://" not in url and "http://" not in url:
             valid=ip_valid(url)
             if valid==3:
                 urls.append("http://"+url)
@@ -661,4 +667,3 @@ def ip_valid(user_input):
                     return 2
         except:
             return 3
-
