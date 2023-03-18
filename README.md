@@ -74,10 +74,12 @@ chmod +x setup.py
 sudo python3 setup.py
 cyberonix
 ```
+## PIP intallation
 
 ```shell script
 pip install cyberonix
 ```
+If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/" target="_blank">click here</a>
 
 # Usage
 
@@ -137,7 +139,6 @@ remove duplicate:
   --remove-duplicate, -rd     To Remove Dublicates From a File(Options: --file,--output)
 ```
 
-If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/" target="_blank">click here</a>
 # Categories
 - ## Tools
     - ### Information Gathring
