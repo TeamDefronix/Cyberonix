@@ -75,6 +75,68 @@ sudo python3 setup.py
 cyberonix
 ```
 
+```shell script
+pip install cyberonix
+```
+
+# Usage
+
+```sh
+cyberonix -h
+ctrl+c for exit
+enter for back
+```
+Please find below the instructions to access the tool's help function, along with a list of all available switches:
+
+```console
+Cyberonix is a complete resource hub for Cyber Security Community. Our aim is to make this
+tool an 1 stop solution for all the Hackers out there to get resources of various topics in
+Cyber Security. We will keep updating this tool & adding new & updated resources on the go.
+
+options:
+  -h, --help                  how this help message and exit
+  --domain DOMAIN, -D DOMAIN  Specify the domain
+  --output OUTPUT, -o OUTPUT  Specify An Output File (-o path/to/location)
+  --file FILE, -f FILE        Specify An Input File (-f path/to/file.txt)
+  --ip IP, -ip IP             Specify IP Address
+
+Main Arguments:
+  --tools, -t                 Run Tools Function
+  --cheatsheet, -c            Run Cheatsheet Function
+  --news [Date], -n [Date]    Date In The Format yyyy-mm-dd
+
+IP:
+  --getip, -gip               Get Ip Of A Domain(options: --file,--domain,--output)
+  --ipinfo, -ipi              Get IP Infomation(Options: --ip,--file,--output)
+
+DNS Records:
+  --dnsrecord, -dns           To Get DNS Records(options: --domain,--file,--output) and use --record to specify record name
+  --record RECORD, -r RECORD  To Give Record For DNSrecord(Like: A,TXT,MX)
+
+Screenshoting:
+  --screenshot, -s            To Get Screenshot Of Websites(options: --file,--domain,--output)
+
+ASN Record:
+  --asnrecord, -asn           To Get ASN Record(Options: --ip,--file,--output)
+
+Password Generation:
+  --passwordgen, -P           To Generate Password
+  --default-password-gen, -pass
+                              To Generate Random Password (Recommended)(You can only use --length,--checkpassword)
+  --upper, -u                 For Uppercase
+  --lower, -l                 For Lowercase
+  --digits, -d                For Digits
+  --punctuation, -p           For Punctuation
+  --length LENGTH, -L LENGTH  To Specify Length Of Password (Default=8)
+  --checkpassword, -C         To Check Your Generated Password
+
+HTTP Status:
+  --http-status, -S           To Get Http Status Code Of A Domain(Options: --domain,--file,--output)
+
+remove duplicate:
+  --remove-duplicate, -rd     To Remove Dublicates From a File(Options: --file,--output)
+```
+
 If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/" target="_blank">click here</a>
 # Categories
 - ## Tools
@@ -238,7 +300,6 @@ If you get Externally-Managed-Environment issue in your machine please check thi
             - `Burpsuite`
             - `Nikto`
             - `Nmap`
-            - `Arachni`
             - `Wapiti`
             - `Nessus`
             - `Nuclei`
@@ -331,73 +392,7 @@ If you get Externally-Managed-Environment issue in your machine please check thi
 - ## News
     - `Date Wise`
 
-# Usage
 
-```sh
-cyberonix -h
-```
-Please find below the instructions to access the tool's help function, along with a list of all available switches:
-
-```console
-Cyberonix is a complete resource hub for Cyber Security Community. Our aim is
-to make this tool an 1 stop solution for all the Hackers out there to get
-resources of various topics in Cyber Security. We will keep updating this tool
-& adding new & updated resources on the go.
-
-options:
-  -h, --help            show this help message and exit
-  --domain DOMAIN, -D DOMAIN
-                        Specify the domain
-  --output OUTPUT, -o OUTPUT
-                        Specify An Input File (-f path/to/file.txt)
-  --file FILE, -f FILE  Specify An Output File (-o path/to/location)
-  --ip IP, -ip IP       Specify IP Address
-
-Main Arguments:
-  --tools, -t           Run Tools Function
-  --cheatsheet, -c      Run Cheatsheet Function
-  --news [Date], -n [Date]
-                        Date In The Format yyyy-mm-dd
-
-IP:
-  --getip Domain, -gip Domain
-                        Get Ip Of A Domain
-  --ipinfo IP, -ipi IP  Get IP Infomation
-
-DNS Records:
-  --dnsrecord, -dns     To Get DNS Records(options: --domain) and use --record
-                        to specify record name
-  --record RECORD, -r RECORD
-                        To Give Record For DNSrecord(Like: A,TXT,MX)
-
-Screenshoting:
-  --screenshot, -s      To Get Screenshot Of Websites(options: --file,--
-                        domain)
-  ASN Record:
-  --asnrecord, -asn     To Get ASN Record(Options: --ip,--file,--output)
-
-Password Generation:
-  --passwordgen, -P     To Generate Password
-  --default-password-gen, -pass
-                        To Generate Random Password (Recommended)(You can only
-                        use --length,--checkpassword)
-  --upper, -u           For Uppercase
-  --lower, -l           For Lowercase
-  --digits, -d          For Digits
-  --punctuation, -p     For Punctuation
-  --length LENGTH, -L LENGTH
-                        To Specify Length Of Password (Default=8)
-  --checkpassword, -C   To Check Your Generated Password
-
-HTTP Status:
-  --http-status, -S     To Get Http Status Code Of A Domain(Options: --domain,
-                        --file,--output)
-
-remove duplicate:
-  --remove-duplicate, -rd
-                        To Remove Dublicates From a File(Options: --file,--
-                        output)
-```
     
 # ScreenShots
 ![help](https://user-images.githubusercontent.com/53564887/222358670-e7b2c901-37a7-4220-a885-b31d617dc801.png)
