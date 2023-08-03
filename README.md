@@ -4,23 +4,23 @@
     <img src="https://forthebadge.com/images/badges/made-with-python.svg">
     <img src="https://forthebadge.com/images/badges/built-with-love.svg">
     <br><br>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/releases/latest">
-      <img alt="Latest release" src="https://img.shields.io/github/v/release/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix/releases/latest">
+      <img alt="Latest release" src="https://img.shields.io/github/v/release/TeamDefronix/Cyberonix?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/pulse">
-      <img alt="Last commit" src="https://img.shields.io/github/last-commit/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix/pulse">
+      <img alt="Last commit" src="https://img.shields.io/github/last-commit/TeamDefronix/Cyberonix?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/blob/main/LICENSE">
-      <img alt="License" src="https://img.shields.io/github/license/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=ee999f&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix/blob/main/LICENSE">
+      <img alt="License" src="https://img.shields.io/github/license/TeamDefronix/Cyberonix?style=for-the-badge&logo=starship&color=ee999f&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/stargazers">
-      <img alt="Stars" src="https://img.shields.io/github/stars/TeamMetaxone/Cyberonix?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix/stargazers">
+      <img alt="Stars" src="https://img.shields.io/github/stars/TeamDefronix/Cyberonix?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-    <a href="https://github.com/TeamMetaxone/Cyberonix/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/TeamMetaxone/Cyberonix?style=for-the-badge&logo=bilibili&color=F5E0DC&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/TeamDefronix/Cyberonix?style=for-the-badge&logo=bilibili&color=F5E0DC&logoColor=D9E0EE&labelColor=302D41" />
     </a>
-    <a href="https://github.com/TeamMetaxone/Cyberonix">
-        <img alt="Repo Size" src="https://img.shields.io/github/repo-size/TeamMetaxone/Cyberonix?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
+    <a href="https://github.com/TeamDefronix/Cyberonix">
+        <img alt="Repo Size" src="https://img.shields.io/github/repo-size/TeamDefronix/Cyberonix?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
     </a>
     <a href="https://twitter.com/intent/follow?screen_name=niteshlike123">
       <img alt="follow on Twitter" src="https://img.shields.io/twitter/follow/niteshlike123?style=for-the-badge&logo=twitter&color=8aadf3&logoColor=D9E0EE&labelColor=302D41" />
@@ -30,13 +30,13 @@
     </a>
   </p>
   <p align="center">
-    <img src="https://stars.medv.io/TeamMetaxone/Cyberonix.svg", title="commits"/>
+    <img src="https://stars.medv.io/TeamDefronix/Cyberonix.svg", title="commits"/>
   </p>
 
 <h1 align="left">Description</h1>
 
 <p align="left">
-    Cyberonix is an open source & free tool by Team Metaxone Solution. The tool at first is developed by a team of students as part of their Internship at Metaxone Solution after their Diploma in Cyber Security Training. </p>
+    Cyberonix is an open source & free tool by Team Defronix Solution. The tool at first is developed by a team of students as part of their Internship at Defronix Solution after their Diploma in Cyber Security Training. </p>
 
 <p align="left"> It is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.</p>
 
@@ -68,7 +68,7 @@
 
 ```shell script
 sudo apt update -y && apt full-upgrade -y
-git clone https://github.com/TeamMetaxone/Cyberonix.git
+git clone https://github.com/TeamDefronix/Cyberonix.git
 cd Cyberonix
 chmod +x setup.py
 sudo python3 setup.py
@@ -407,7 +407,7 @@ remove duplicate:
 <h1 align="left">Socials</h1>
 
 <p align="left">
-<a href="https://github.com/TeamMetaxone"><img src="https://user-images.githubusercontent.com/696094/196835284-c52d4bd1-7034-439e-848b-47d4f2933dff.svg" width="64" height="64" alt="Github Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://discord.gg/defronix"><img src="https://user-images.githubusercontent.com/696094/196835282-f5c47d66-29b7-4210-9ee0-d9cdecde3559.svg" width="64" height="64" alt="Discord Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://twitter.com/niteshlike123"><img src="https://user-images.githubusercontent.com/696094/196835281-52617611-ede6-40da-a4bc-8c5025622bbf.svg" width="64" height="64" alt="Twitter Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/>
+<a href="https://github.com/TeamDefronix"><img src="https://user-images.githubusercontent.com/696094/196835284-c52d4bd1-7034-439e-848b-47d4f2933dff.svg" width="64" height="64" alt="Github Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://discord.gg/defronix"><img src="https://user-images.githubusercontent.com/696094/196835282-f5c47d66-29b7-4210-9ee0-d9cdecde3559.svg" width="64" height="64" alt="Discord Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/> <a href="https://twitter.com/niteshlike123"><img src="https://user-images.githubusercontent.com/696094/196835281-52617611-ede6-40da-a4bc-8c5025622bbf.svg" width="64" height="64" alt="Twitter Logo"/></a> <img src="assets/misc/transparent.png" height="1" width="5"/>
 </p>
 
 <h1 align="left">Support</h1>
@@ -420,7 +420,7 @@ remove duplicate:
 <div align="center">
     <h1 id="Contributors">Thanks To All Contributors</h1>
 
-<a href="https://github.com/TeamMetaxone/Cyberonix/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TeamMetaxone/Cyberonix" />
+<a href="https://github.com/TeamDefronix/Cyberonix/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=TeamDefronix/Cyberonix" />
 </a>
 </div>
