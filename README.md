@@ -38,7 +38,7 @@
 <p align="left">
     Cyberonix is an open source & free tool by Team Defronix Solution. The tool at first is developed by a team of students as part of their Internship at Defronix Solution after their Diploma in Cyber Security Training. </p>
 
-<p align="left"> It is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.</p>
+<p align="left"> It is a complete resource hub for Cyber Security Community. Our aim is to make this tool a one stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.</p>
 
 <p align="left"> Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update. 
 </p>
@@ -74,10 +74,10 @@ chmod +x setup.py
 sudo python3 setup.py
 cyberonix
 ```
-## PIP intallation
+## PIP installation
 
 ```shell script
-pip install cyberonix
+beronix
 ```
 If you get Externally-Managed-Environment issue in your machine please check this blog <a href="https://technicalnavigator.in/how-to-fix-error-externally-managed-environment-in-python-kali-linux/" target="_blank">click here</a>
 
@@ -113,9 +113,9 @@ IP:
 
 DNS Records:
   --dnsrecord, -dns           To Get DNS Records(options: --domain,--file,--output) and use --record to specify record name
-  --record RECORD, -r RECORD  To Give Record For DNSrecord(Like: A,TXT,MX)
+  --record RECORD, -r RECORD  To Give Record For DNS record(Like: A,TXT,MX)
 
-Screenshoting:
+Screenshotting:
   --screenshot, -s            To Get Screenshot Of Websites(options: --file,--domain,--output)
 
 ASN Record:
@@ -133,15 +133,15 @@ Password Generation:
   --checkpassword, -C         To Check Your Generated Password
 
 HTTP Status:
-  --http-status, -S           To Get Http Status Code Of A Domain(Options: --domain,--file,--output)
+  --http-status, -S           To Get HTTP Status Code Of A Domain(Options: --domain,--file,--output)
 
 remove duplicate:
-  --remove-duplicate, -rd     To Remove Dublicates From a File(Options: --file,--output)
+  --remove-duplicate, -rd     To Remove Duplicates From a File(Options: --file,--output)
 ```
 
 # Categories
 - ## Tools
-    - ### Information Gathring
+    - ### Information Gathering
         - `Nmap`
         - `Maltego`
         - `Dracnmap`
@@ -174,7 +174,7 @@ remove duplicate:
             - `Johnny`
             - `Crackstatiion`
             - `cyberchef`
-        - ### Dicitionary Attacks
+        - ### Dictionary Attacks
             - `Hashcat`
             - `John The Ripper`
             - `Hydra`
@@ -339,13 +339,13 @@ remove duplicate:
                 - `Web Application — Business Logic Vulnerabilities`
                 - `Business Logic Flaw`
         - ### Cryptography
-            - `Sslstript`
+            - `SSLstript`
             - `Bettercap`
             - `Ettercap (Graphical Of Bettercap)`
-            - `Sslyze`
+            - `SSLyze`
             - `0-Saft`
-            - `Sslscan`
-            - `Ssllabs`
+            - `SSLscan`
+            - `SSLlabs`
         - ### Risky Functionality - File Uploads
             - `Fuxploider`
             - `Fuse`
@@ -359,10 +359,10 @@ remove duplicate:
             - `Metasploit`
             - `Nmap`
             - `Penetration Testers Framework (Ptf)`
-        - ### Html 5
+        - ### HTML5
             - ### Writeups
                 - `Web Messaging`
-                - `Web Storage Sql Injection`
+                - `Web Storage SQL Injection`
                 - `Cors Implementation`
                 - `Offline Web Application`
 - ## Cheatsheets
