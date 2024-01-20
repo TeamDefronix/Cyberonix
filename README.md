@@ -36,7 +36,7 @@
 <h1 align="left">Description</h1>
 
 <p align="left">
-    Cyberonix is an open source & free tool by Team Defronix Solution. The tool at first is developed by a team of students as part of their Internship at Defronix Solution after their Diploma in Cyber Security Training. </p>
+    Cyberonix is an open source & free tool by Team Defronix Cyber Security Pvt. Ltd. The tool at first is developed by a team of students as part of their Internship at Defronix Solution after their Diploma in Cyber Security Training. </p>
 
 <p align="left"> It is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.</p>
 
