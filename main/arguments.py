@@ -1,10 +1,31 @@
 import dns.resolver, requests, socket, os, time
 import random
+from main import tool
+from main.tools import *
 from selenium import webdriver
 from ipwhois import IPWhois
-from main.tools import colors, banner
+from main.tools import colors, banner,template,Recommended_Tool
+import argparse, itertools
 
-
+def tools(name):
+    try:
+        getattr(information_gathering, name)()
+        getattr(Vulnerability_Analysis, name)()
+        getattr(WEB_Application_Analysis, name)()
+        getattr(Password_Hacking, name)()
+        getattr(Wireless_Hacking, name)()
+        getattr(Exploitation_Tools, name)()
+        getattr(Sniffing_and_Spoofing, name)()
+        getattr(PostExploitationAttacks, name)()
+        getattr(Anonymity, name)()
+        getattr(Framework, name)()
+        getattr(Pentesting_Bug_Bounty, name)()
+        getattr(forensic, name)()
+    except KeyboardInterrupt:
+        return
+    except Exception as err:
+        return
+    
 def getip(url='',path='',output=''):
         banner.main()
         banner.attack("Get Ip")
@@ -63,77 +84,6 @@ def getip(url='',path='',output=''):
                                 outputfunc(output, f"{url}\t -->\tYou Have Entered IP")
         else:
             print(f"{colors.red}[-] Something Went Wrong\n[!] Maybe You have Entered Ip")
-
-
-def ipinformation(url='',path='',output=''):
-        banner.main()
-        banner.attack("Get Ip Infomation")
-        valid=ip_valid(url)
-        if path != "":
-                try:
-                    f = open(path, "r")
-                    urls = f.read()
-                    urls = urls.split("\n")
-                    for url in urls:
-                        if url != "":
-                            valid=ip_valid(url)
-                            if valid==1:
-                                try:
-                                    temp=url
-                                    url = f"http://ip-api.com/json/{url}"
-                                    response = requests.get(url)
-                                except requests.exceptions.ConnectionError:
-                                    print(f"{colors.red}[-] No Internet Connection{colors.reset}")
-                                    return
-                                except KeyboardInterrupt:
-                                    exit_program()
-                                
-
-                                data = response.json()
-                                if output != "":
-                                        outputfunc(output, f"\t{temp}")
-                                print(f"{colors.blue}\t{temp}{colors.reset}")
-                                for key, value in data.items():
-                                    if output != "":
-                                        outputfunc(output, f"{key}\t --> \t{value}")
-                                    print(f"{colors.blue}[+] {key}\t --> \t{colors.green}{value}{colors.reset}")
-                            else:
-                                print(f"{colors.red}[-]{url}\t --> \t It Is Maybe Domain Or Invalid Ip Range{colors.reset}")
-                                if output != "":
-                                        outputfunc(output, f"[-]{url}\t --> \t It Is Maybe Domain Or Invalid Ip Range")
-
-                except KeyboardInterrupt:
-                    exit_program()
-                except Exception as err:
-                    print(
-                        f"{colors.red}[-] Something Went Wrong\n[!] {err}\n[!] Check Your File location"
-                    )
-        else:
-                if valid==1:
-                    try:
-                        temp=url
-                        url = f"http://ip-api.com/json/{url}"
-                        response = requests.get(url)
-                    except requests.exceptions.ConnectionError:
-                        print(f"{colors.red}[-] No Internet Connection{colors.reset}")
-                        return
-                    except KeyboardInterrupt:
-                        exit_program()
-                    
-
-                    data = response.json()
-                    if output != "":
-                            outputfunc(output, f"\t{temp}")
-                    print(f"{colors.blue}[+]\t{temp}{colors.reset}")
-                    for key, value in data.items():
-                        if output != "":
-                            outputfunc(output, f"{key}\t --> {value}")
-                        print(f"{colors.blue}[+] {key}\t --> \t{colors.green}{value}{colors.reset}")
-                else:
-                    print(f"{colors.red}[-]{url}\t --> \t It Is Maybe Domain Or Invalid Ip Range{colors.reset}")
-                    if output != "":
-                        outputfunc(output, f"[-]{url}\t --> \t It Is Maybe Domain Or Invalid Ip Range")
-
 
 
 def dnsrecords(url="", names='',path='',output=''):
@@ -310,6 +260,7 @@ def asnrecord(path="", url="", output=""):
 
 
 def outputfunc(addr, line):
+
     f = open(addr, "a")
     f.write(line)
     f.write("\n")
@@ -503,7 +454,19 @@ def password_gen(
             print(
                 f"{colors.red}[-] Please Specify atleast one argument (--upper,--lower,--digits,--punctuation) {colors.reset}"
             )
+def generate_wordlist(characters=True, min_length=True, max_length=True, output_file=True):
+    try:
+        with open(output_file, 'w') as file:
 
+            for length in range(min_length, max_length + 1):
+
+                for combination in itertools.product(characters, repeat=length):
+
+                    word = ''.join(combination)
+                    file.write(word + '\n')
+        print(f"[+] Wordlist generated and saved to {output_file}.txt")
+    except KeyboardInterrupt:
+                exit_program()
 def remove_dublicates(location,output=''):
         f=open(location,'r')
         lines=f.read()
@@ -590,7 +553,7 @@ def screenshot(path="", url="",output=''):
                         f"{colors.red}[-] Something Went Wrong\n[!] {err}\n[!] Check Your File location"
                     )
             else:
-                driver_path = "main/tools/.driver/geckodriver"
+                driver_path = "./main/tools/.driver/geckodriver"
                 firefox_options = webdriver.FirefoxOptions()
                 firefox_options.headless = True
                 driver = webdriver.Firefox(executable_path=driver_path, options=firefox_options)
@@ -600,6 +563,8 @@ def screenshot(path="", url="",output=''):
                         url_new = url.split("//")
                         path = os.getcwd()
                         if output!='':
+                            if not os.path.isdir(output):
+                                os.mkdir(output)
                             screenshot_filename=f'{output}/{url_new[0]}_{url_new[1].replace("/","_")}.png'
                         else:
                             if not os.path.isdir("Screenshot"):
@@ -611,7 +576,8 @@ def screenshot(path="", url="",output=''):
                         print(
                             f"{colors.blue}[+] {url}\t --> {colors.green}Screenshot saved to {screenshot_filename}{colors.reset}"
                         )
-                        driver.quit()
+                        #driver.quit()
+                        #time.sleep(5)
                     except KeyboardInterrupt:
                         exit_program()
                     except Exception as err:
@@ -619,6 +585,7 @@ def screenshot(path="", url="",output=''):
                             f"{colors.red}[+] {url}\t --> {colors.red}Something Went Wrong\n[!] {err}{colors.reset}"
                         )
                     time.sleep(0.5)
+                driver.quit()
 def domain():
     def check_http(url):
         urls=[]

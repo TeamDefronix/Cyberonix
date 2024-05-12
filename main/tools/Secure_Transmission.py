@@ -19,12 +19,12 @@ def main():
             "Go back",
         ]
         for i in range(len(list_vulns)):
-            print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
+            print(colors.options, f"{i+1}) {list_vulns[i]}".title(), colors.reset)
         try:
             vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         except KeyboardInterrupt:
-            template.exit_program()
-        if vulns == "0":
+            return
+        if vulns == "1":
             os.system("clear")
             # github=github_getting_text("","")
             template.template(
@@ -38,7 +38,7 @@ def main():
                 },
             )
             # writeup.writeup({"10 Online Tools to Test SSL, TLS and Latest Vulnerability":"https://geekflare.com/ssl-test-certificate/","Testing for Weak SSL TLS Ciphers":"https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_SSL_TLS_Ciphers_Insufficient_Transport_Layer_Protection","How to Verify the SSL Key Length":"https://www.rapidsslonline.com/ssl/how-to-verify-the-ssl-key-length/"},"Check SSL Version, Algorithms, Key length")
-        elif vulns == "1":
+        elif vulns == "2":
             os.system("clear")
             # github
             template.template(
@@ -49,7 +49,7 @@ def main():
                     "A closer look at Digital Certificates": "https://medium.com/@mehulgala77/a-closer-look-at-digital-certificates-9ce5a4c56f75"
                 },
             )
-        elif vulns == "2":
+        elif vulns == "3":
             os.system("clear")
             template.template(
                 "Check credentials only delivered over HTTPS",
@@ -60,7 +60,7 @@ def main():
                     "Penetration testing of Credential Data over Encrypted Channel": "https://www.hackingloops.com/penetration-testing-of-credential-data-over-encrypted-channel/",
                 },
             )
-        elif vulns == "3":
+        elif vulns == "4":
             os.system("clear")
             template.template(
                 "Check session tokens only delivered over HTTPS",
@@ -72,7 +72,7 @@ def main():
                 },
             )
 
-        elif vulns == "4":
+        elif vulns == "5":
             os.system("clear")
             template.template(
                 "Check if HTTP Strict Transport Security (HSTS) in use",
@@ -94,7 +94,7 @@ def vuln_options():
     try:
         ask = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
     except KeyboardInterrupt:
-        template.exit_program()
+        return
     return ask
 
 

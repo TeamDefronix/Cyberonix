@@ -10,25 +10,26 @@ def main():
         banner.main()
         banner.attack("Authentication")
         list_vulns = [
-            "User enumeration",
-            "Authentication bypass",
-            "vulnerable remember me functionality",
-            "Password reset",
-            "Captcha bypass",
-            "Autocomplete on ",
-            "multifactor authentication",
-            "Logout functionality",
-            "cache management",
+            " User enumeration",
+            " Authentication bypass",
+            " vulnerable remember me functionality",
+            " Password reset",
+            " Captcha bypass",
+            " Autocomplete on ",
+            " multifactor authentication",
+            " Logout functionality",
+            " cache management",
             "Default credentials",
             "Go back",
         ]
         for i in range(len(list_vulns)):
-            print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
+            print(colors.options, f"{i+1}) {list_vulns[i]}".title(), colors.reset)
         try:
             vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         except KeyboardInterrupt:
-            template.exit_program()
-        if vulns == "0":
+            return
+        
+        if vulns == "1":
             os.system("clear")
             template.template(
                 "Test for User enumeration",
@@ -39,7 +40,7 @@ def main():
                     "What Is User Enumeration?": "https://www.rapid7.com/blog/post/2017/06/15/about-user-enumeration/",
                 },
             )
-        elif vulns == "1":
+        elif vulns == "2":
             os.system("clear")
             template.template(
                 "Testing for authentication bypass",
@@ -52,7 +53,7 @@ def main():
                 },
             )
 
-        elif vulns == "2":
+        elif vulns == "3":
             os.system("clear")
             template.template(
                 "Testing for vulnerable remember me functionality",
@@ -64,7 +65,7 @@ def main():
                 },
             )
 
-        elif vulns == "3":
+        elif vulns == "4":
             os.system("clear")
             template.template(
                 "Testing for Password reset",
@@ -72,12 +73,12 @@ def main():
                 "",
                 {
                     "Password reset poisoning": "https://portswigger.net/web-security/host-header/exploiting/password-reset-poisoning",
-                    "Testing Forgot Password Functionality": "https://twitter.com/tuhin1729_/status/1437471718142976007?t=G7ODwQzc6ON2T6_DDC89jA&s=19",
+                    "Testing Forgot Password Functionality": "https://github.com/tuhin1729/Bug-Bounty-Methodology/blob/main/PasswordReset.md",
                     "Exploiting Password Reset Poisoning": "https://infosecwriteups.com/exploiting-password-reset-poisoning-b748797f0661",
                 },
             )
 
-        elif vulns == "4":
+        elif vulns == "5":
             os.system("clear")
             template.template(
                 "Testing for Captcha bypass",
@@ -90,7 +91,7 @@ def main():
                 },
             )
 
-        elif vulns == "5":
+        elif vulns == "6":
             os.system("clear")
             template.template(
                 "Test for autocomplete on",
@@ -102,7 +103,7 @@ def main():
                 },
             )
 
-        elif vulns == "6":
+        elif vulns == "7":
             os.system("clear")
             template.template(
                 "Testing for multifactor authentication",
@@ -115,10 +116,10 @@ def main():
                 },
             )
 
-        elif vulns == "7":
+        elif vulns == "8":
             os.system("clear")
             template.template(
-                "Check SSL Version, Algorithms",
+                "Tesing for Logout functionality",
                 "no-tools",
                 "",
                 {
@@ -127,7 +128,7 @@ def main():
                 },
             )
 
-        elif vulns == "8":
+        elif vulns == "9":
             os.system("clear")
             template.template(
                 "Test for cache management",
@@ -139,7 +140,7 @@ def main():
                 },
             )
 
-        elif vulns == "9":
+        elif vulns == "10":
             template.template(
                 "Test for Default credentials",
                 "no-tools",

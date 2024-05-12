@@ -1,168 +1,333 @@
-.TH CYBERONIX 1 2023-02-06 "GNU" "Cyberonix User Manual"
+.TH CYBERONIX 1 "20-02-2024" "GNU" "Cyberonix User Manual"
+
 .SH NAME
-.B cyberonix \- 
+.B Cyberonix \- 
 .I A Complete Resource Hub For Cyber Security Community
+
+
 .SH SYNOPSIS
-.B cyberonix
+.RI cyberonix
 .RI [ options ]
-.RI "[\-ip " IP "]"
-.RI "[\-r " Record "]"
-.RI [ Argument ]..
-.SH DESCRIPTION
+.RI [ Argument ]
+
+.SH INTRODUCTION
+.RI [ Argument ]
+
+.SH INTRODUCTION
 .B Cyberonix
 is an open source & free tool by 
-.B Team Metaxone Solution. 
-The tool at first is developed by a team of students as part of their Internship at 
-.B Metaxone Solution 
-after their Diploma in Cyber Security Training.
+.B Team Defronix Cyber Security Pvt. Ltd. 
+(version 3.0, released on 01-03-2024). The tool was initially developed by a team of students during their internship at 
+.B Defronix Cyber Security 
+after completing their Diploma in Cyber Security Training.
 
-It is a complete resource hub for Cyber Security Community. Our aim is to make this tool an 1 stop solution for all the Hackers out there to get resources of various topics in Cyber Security. We will keep updating this tool & adding new & updated resources on the go.
+Cyberonix is a comprehensive resource hub for the Cybersecurity community. Our goal is to establish this tool as a one-stop solution for hackers, providing resources on various topics in Cybersecurity. We are committed to consistently updating this tool, incorporating new and revised resources as needed.
 
-Feel free to suggest any feature that you want to see in this tool, We will be happy to include that in our next update.
-
+Feel free to suggest any features you'd like to see, we are open to including them in our next update.
 
 .SH OPTIONS
 
+.TP
+.B --tools, -t
+To directly access the Tools option.
 
+.TP
+.B --cheatsheet, -c
+Directly access the Cheatsheet option.
 
-.B \-\-tools
-,
-.B \-t
-To Directly Access Tools Option
+.TP
+.B --asnrecord, -asn
+Retrieve ASN record information based on an IP address.
+  
+  Example: 
 
-.B \-\-cheatsheet
-,
-.B \-c
-To Directly Access Cheatsheet Option
+    cyberonix --asnrecord -ip 8.8.8.8
 
-.B \-\-news
-,
-.B \-n 
-.RI [ Date ]
-To Directly Access News Option. Giving Date Is Optional And Date Will Be Given In The Format yyyy-mm-dd (like: --news 2023-02-06)
+.TP
+.B --dnsrecord, -dns
+Retrieve DNS record information for a domain, including optional record type specification.
+  
+  Example: 
 
-.B \-\-asnrecord
-,
-.B \-asn
-To Get asn Record(example: -asn -ip 8.8.8.8)
+    cyberonix --dnsrecord -domain defronix.com --record TXT
 
-.B \-\-dnsrecord
-,
-.B \-dns
-To Get DNS Record(example: -dns -domain metaxonesolution.com --record TXT)
+.TP
+.B --default-password-gen, -pass
+Generate a secure random password with options for length customization.
+  
+  Example: 
 
-.B \-\-default-password-gen
-,
-.B \-pass
-To Generate Random Password it will include all upper case lower case digits punctuation length will be 8 you can use --length <length> to give custom length (like -pass -L 10) (Recommended)
+    cyberonix --default-password-gen -L 10
 
-.B \-\-http-status
-,
-.B \-S
-To Get Http Status Code Of A Domain like 200 404(example: -S -D google.com)
+.TP
+.B --http-status, -S
+Get the HTTP status code of a domain.
+ 
+  Example: 
 
-.B \-\-screenshot
-,
-.B \-s
-To Get Screenshot Of Websites and it will save it to /Screenshot(example: -s -domain metaxonesolution.com)
+    cyberonix --http-status -D google.com
 
-.B \-\-remove-duplicate
-,
-.B \-rd
-To Remove Duplicate From a file(example: -rd -f file.txt)
+.TP
+.B --screenshot, -s
+Capture a screenshot of websites, saved to /Screenshot.
+  
+  Example: 
 
-.B \-\-getip
-,
-.B \-gip
-.RI [ domain ]
-To Get Ip Of A Domain (example: -gip google.com)
+    cyberonix --screenshot -domain defronix.com
 
+.TP
+.B --remove-duplicate, -rd
+Remove duplicate entries from a file.
+  
+  Example: 
+
+    cyberonix --remove-duplicate -f file.txt
+
+.TP
+.B --getip, -gip
+Retrieve the IP address of a domain.
+ 
+  Example: 
+
+    cyberonix --getip -D google.com
+.TP
+.B --tools, -t
+To directly access the Tools option.
+
+.TP
+.B --cheatsheet, -c
+Directly access the Cheatsheet option.
+
+.TP
+.B --asnrecord, -asn
+Retrieve ASN record information based on an IP address.
+  
+  Example: 
+
+    cyberonix --asnrecord -ip 8.8.8.8
+
+.TP
+.B --dnsrecord, -dns
+Retrieve DNS record information for a domain, including optional record type specification.
+  
+  Example: 
+
+    cyberonix --dnsrecord -domain defronix.com --record TXT
+
+.TP
+.B --default-password-gen, -pass
+Generate a secure random password with options for length customization.
+  
+  Example: 
+
+    cyberonix --default-password-gen -L 10
+
+.TP
+.B --http-status, -S
+Get the HTTP status code of a domain.
+ 
+  Example: 
+
+    cyberonix --http-status -D google.com
+
+.TP
+.B --screenshot, -s
+Capture a screenshot of websites, saved to /Screenshot.
+  
+  Example: 
+
+    cyberonix --screenshot -domain defronix.com
+
+.TP
+.B --remove-duplicate, -rd
+Remove duplicate entries from a file.
+  
+  Example: 
+
+    cyberonix --remove-duplicate -f file.txt
+
+.TP
+.B --getip, -gip
+Retrieve the IP address of a domain.
+ 
+  Example: 
+
+    cyberonix --getip -D google.com
 
 .SH ARGUMENTS
+.TP
+.B --domain, -D
+Specify the domain for various operations.
+ 
+  Example: 
 
+    cyberonix --domain google.com
 
+.TP
+.B --ip, -ip
+Specify the IP address for relevant operations.
 
-.B \-\-domain
-,
-.B \-D
-.RI [ domain ]
-To Give Domain (example: -D google.com)
+  Example: 
 
-.B \-\-ip
-,
-.B \-ip
-.RI [ IP ]
-To Give IP (example: -ip 8.8.8.8)
+    cyberonix --ip 8.8.8.8
 
-.B \-\-record
-,
-.B \-r
-.RI [ Record ]
-To Give Record For DNSrecord Like: A,TXT,MX (Example: --record TXT)
+.TP
+.B --record, -r
+Specify the record type for DNS queries.
+  
+  Example:
 
-.B \-\-upper
-,
-.B \-u
-For Upper Case Character In Password
+    cyberonix --record TXT
 
-.B \-\-lower
-,
-.B \-l
-For Lower Case Character In Password
+.TP
+.B --upper, -u
+Include uppercase characters in the generated password.
 
+.TP
+.B --lower, -l
+Include lowercase characters in the generated password.
 
-.B \-\-digits
-,
-.B \-d
-For digits in Password
+.TP
+.B --digits, -d
+Include digits in the generated password.
 
+.TP
+.B --punctuation, -p
+Include special characters in the generated password.
 
-.B \-\-punctuation
-,
-.B \-p
-For Special character in Password
+.TP
+.B --length, -L
+Specify the length of the generated password.
+  
+  Example: 
 
+    cyberonix --length 12
 
-.B \-\-length
-,
-.B \-l
-.RI [ Length ]
-To Specify Length Of Password Default=8 (Example: -l 10)
+.TP
+.B --checkpassword, -C
+Check the generated password for commonality.
 
-.B \-\-checkpassword
-,
-.B \-C
-To Check Your Generated Password(if it is common or not)
+.TP
+.B --file, -f
+Specify a file input for relevant operations.
+  
+  Example:
+  
+    cyberonix --file /path/to/file
 
-.B \-\-file
-,
-.B \-f
-.RI [ location ]
-To Give A File Input(example: -f /path/to/file)
+.TP
+.B --output, -o
+Specify the output file for relevant operations.
+  
+  Example: 
 
-.B \-\-output
-,
-.B \-o
-.RI [ location ]
-To Get Output In A File (example: -o /path/to/file)
+    cyberonix --output /path/to/output
+.TP
+.B --domain, -D
+Specify the domain for various operations.
+ 
+  Example: 
 
+    cyberonix --domain google.com
+
+.TP
+.B --ip, -ip
+Specify the IP address for relevant operations.
+
+  Example: 
+
+    cyberonix --ip 8.8.8.8
+
+.TP
+.B --record, -r
+Specify the record type for DNS queries.
+  
+  Example:
+
+    cyberonix --record TXT
+
+.TP
+.B --upper, -u
+Include uppercase characters in the generated password.
+
+.TP
+.B --lower, -l
+Include lowercase characters in the generated password.
+
+.TP
+.B --digits, -d
+Include digits in the generated password.
+
+.TP
+.B --punctuation, -p
+Include special characters in the generated password.
+
+.TP
+.B --length, -L
+Specify the length of the generated password.
+  
+  Example: 
+
+    cyberonix --length 12
+
+.TP
+.B --checkpassword, -C
+Check the generated password for commonality.
+
+.TP
+.B --file, -f
+Specify a file input for relevant operations.
+  
+  Example:
+  
+    cyberonix --file /path/to/file
+
+.TP
+.B --output, -o
+Specify the output file for relevant operations.
+  
+  Example: 
+
+    cyberonix --output /path/to/output
 
 .SH FILES
-.TP
-.I
-/usr/bin/cyberonix
+
+.RI /usr/bin/cyberonix
+: Path to the Cyberonix executable file.
+
+.RI /usr/bin/cyberonix
+: Path to the Cyberonix executable file.
 
 .SH BUGS
-In the event that you encounter any bugs or issues, we encourage you to reach out to us through our GitHub repository at https://github.com/TeamMetaxone/Cyberonix/issues or by contacting us through our Discord server at https://discord.gg/eAzXRzCS6p. We welcome any feedback or suggestions you may have, and we are committed to addressing any concerns you may have in a timely and professional manner.
+ If you encounter any bugs or issues,
+ please report them on our GitHub repository:< https://github.com/TeamDefronix/Cyberonix/issues >
+ or contact us via Discord:< https://discord.gg/eAzXRzCS6p >. 
+ We appreciate any feedback and suggestions and are committed to addressing concerns promptly and professionally.
+ 
+
+.SH ERROR HANDLING
+.B Cyberonix
+handles invalid inputs by displaying informative error messages. If you encounter any issues or unexpected behavior, refer to the error messages for troubleshooting or report them on our GitHub repository.
 
 .SH COPYRIGHT
 .PP
-Copyright 2023 MetaxOne Solution. All rights reserved
-https://metaxonesolution.com/
+Copyright 2023 Defronix Cyber Security Pvt. Ltd. All rights reserved.
+Visit us at: <https://defronix.com/>
+
+.SH LICENSE
+.B Cyberonix
+is distributed under the MIT License. See the accompanying LICENSE file for more details.
+Copyright 2023 Defronix Cyber Security Pvt. Ltd. All rights reserved.
+Visit us at: <https://defronix.com/>
+
+.SH LICENSE
+.B Cyberonix
+is distributed under the MIT License. See the accompanying LICENSE file for more details.
 
 .SH CREDITS
 .PP
-We would like to acknowledge and express our gratitude to the talented and hardworking team at Metaxone for their exceptional work in developing the Cyberonix toolkit. Their dedication, creativity, and expertise have resulted in a powerful and innovative software tool that has the potential to make a significant impact in the field of cybersecurity. We extend our sincere thanks to the Metaxone team for their contributions and commitment to excellence.
-.SH
+We acknowledge and express gratitude to the talented team at Defronix for their exceptional work on the Cyberonix toolkit. Their dedication and expertise have resulted in a powerful and innovative software tool with the potential to make a significant impact in the field of cybersecurity. Sincere thanks to the Defronix team for their contributions and commitment to excellence.
+
+
 .PP
-MetaxOne Solution, Cyberonix
+Cyberonix, Defronix Cyber Security

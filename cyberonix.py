@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import os
 import subprocess
-from main import *
-from main.tools import banner,colors
+from main.tools import banner,colors,template,Recommended_Tool,run_on_browser
+from main import * 
 import time,argparse
 
 def exit_program():
@@ -49,102 +49,102 @@ try:
         main_args = parser.add_argument_group('Main Arguments')
             
         main_args.add_argument(
-            "--tools", "-t", action="store_true", help="Run Tools Function"
+            "--tools", "-t",type=str,help=": Access various cybersecurity tools."
         )
         main_args.add_argument(
-            "--cheatsheet", "-c", action="store_true", help="Run Cheatsheet Function"
-        )
-        main_args.add_argument(
-            "--news",
-            "-n",
-            nargs="?",
-            metavar="Date",
-            const="latest",
-            type=str,
-            help="Date In The Format yyyy-mm-dd",
+
+            "--cheatsheet", "-c", action="store_true", help=": Get a cybersecurity reference guide."
+
         )
         ip_args = parser.add_argument_group('IP')
         ip_args.add_argument(
-            "--getip", "-gip", help="Get Ip Of A Domain(options: --file,--domain,--output)", action="store_true",
+            "--getip", "-gip", action="store_true",help=": Get Ip Of A Domain. \nCan use with: --domain, --file, --output",
         )
-        ip_args.add_argument("--ipinfo", "-ipi", action="store_true", help="Get IP Infomation(Options: --ip,--file,--output)")
-                      
+                              
         dns_Args = parser.add_argument_group('DNS Records')
-        parser.add_argument("--domain", "-D", dest='domain',
-                    help='Specify the domain', option_strings=['--domain'])
+        parser.add_argument("--domain", "-D", dest='domain', nargs="?" , const="" ,help=': Specify the domain', option_strings=['--domain'])
         dns_Args.add_argument(
-            "--dnsrecord", "-dns", action="store_true", help="To Get DNS Records(options: --domain,--file,--output) and use --record to specify record name"
+            "--dnsrecord", "-dns", action="store_true", help=": To Get DNS Records of a domain. Can use with: --domain, --file, --output "
         )
         dns_Args.add_argument(
-            "--record", "-r", help="To Give Record For DNSrecord(Like: A,TXT,MX)"
+            "--record", "-r", help=": Specify the type of DNS record (e.g., A, TXT, MX). \nusage: --record <type>"
         )
         screenshot_Args = parser.add_argument_group('Screenshoting')
         screenshot_Args.add_argument(
             "--screenshot",
             "-s",
             action="store_true",
-            help="To Get Screenshot Of Websites(options: --file,--domain,--output)",
+            help=": To take a Screenshot Of Website/Websites. \nCan use with: --domain,--file,--output",
         )
-        parser.add_argument("--output", "-o", help="Specify An Output File (-o path/to/location)")
-        parser.add_argument("--file", "-f", help="Specify An Input File (-f path/to/file.txt)")
+        parser.add_argument("--output", "-o", help=": Save the results to the file Specify File location -o path/to/location")
+        parser.add_argument("--file", "-f", help=": Read input from a file Specify An Input File -f path/to/file.txt")
         
         asn_Args = parser.add_argument_group('ASN Record')
         parser.add_argument("--ip", "-ip", help="Specify IP Address")
         asn_Args.add_argument(
-                "--asnrecord", "-asn", action="store_true", help="To Get ASN Record(Options: --ip,--file,--output)"
+                "--asnrecord", "-asn", action="store_true", help=": Get ASN (network) information. \n Can use with:  --ip,--file,--output"
         )
         password_Args = parser.add_argument_group("Password Generation")
         password_Args.add_argument(
-            "--passwordgen", "-P", action="store_true", help="To Generate Password"
+            "--passwordgen", "-P", action="store_true", help=": To Generate a Password"
         )
         password_Args.add_argument(
             "--default-password-gen",
             "-pass",
             action="store_true",
-            help="To Generate Random Password (Recommended)(You can only use --length,--checkpassword)",
+            help=": To Generate Random Password (Recommended)(only use --length, --checkpassword for customization).",
         )
-
+        
         password_Args.add_argument(
-            "--upper", "-u", action="store_true", help="For Uppercase"
-        )
-        password_Args.add_argument(
-            "--lower", "-l", action="store_true", help="For Lowercase"
+            "--upper", "-u", action="store_true", help=": For Uppercase"
         )
         password_Args.add_argument(
-            "--digits", "-d", action="store_true", help="For Digits"
+            "--lower", "-l", action="store_true", help=": For Lowercase"
         )
         password_Args.add_argument(
-            "--punctuation", "-p", action="store_true", help="For Punctuation"
+            "--digits", "-d", action="store_true", help=": For Digits"
         )
         password_Args.add_argument(
-            "--length", "-L", help="To Specify Length Of Password (Default=8)"
+            "--punctuation", "-p", action="store_true", help=": For Punctuation"
+        )
+        password_Args.add_argument(
+            "--length", "-L", help=": To Specify Length Of Password (Default=8)"
         )
         password_Args.add_argument(
             "--checkpassword",
             "-C",
             action="store_true",
-            help="To Check Your Generated Password",
+            help=": To Check Your Generated Password",
         )
-        
+        wordlist_Args = parser.add_argument_group("Wordlist Generation")
+        wordlist_Args.add_argument(
+            "--wordlist", "-w", action="store_true", help=": To Generate a Wordlist"
+        )
+        wordlist_Args.add_argument("-ch", "--characters", type=str, default="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+                   help=": Set of characters to include in the wordlist")
+        wordlist_Args.add_argument("-min", "--min_length", type=int, default=4, help=": Minimum length of the words ( Default = 4 )")
+        wordlist_Args.add_argument("-max", "--max_length", type=int, default=6, help=": Maximum length of the words ( Default = 6 )")
+        wordlist_Args.add_argument("-ot", "--output_file", type=str, default="custom_wordlist.txt", help=": Output file name ( Default = custom_wordlist.txt )")
+
         hstatus_Args = parser.add_argument_group('HTTP Status')
         hstatus_Args.add_argument(
             "--http-status",
             "-S",
             action="store_true",
-            help="To Get Http Status Code Of A Domain(Options: --domain,--file,--output)",
+            help=": Check a website's HTTP status code." "\nCan use with: --domain, --file, --output" ,
         )
         remove_dub_Args = parser.add_argument_group('remove duplicate')
         remove_dub_Args.add_argument(
             "--remove-duplicate",
             "-rd",
             action="store_true",
-            help="To Remove Dublicates From a File(Options: --file,--output)",
+            help=": To Remove Duplicates From a File. Can use with: --file,--output",
         )
         args = parser.parse_args()
-
         if args.tools:
-            tool.main()
+            arguments.tools(args.tools) 
         elif args.getip:
+            
             if args.file:
                 if args.output:
                     arguments.getip(path=args.file, output=args.output)
@@ -152,23 +152,21 @@ try:
                     arguments.getip(path=args.file)
             elif args.domain:
                 if args.output:
-                    arguments.getip(url=args.domain, output=args.output)
+                    arguments.getip(url=args.domain,output=args.output)                    
                 else:
                     arguments.getip(url=args.domain)
             else:
-                print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
-                )
+                if args.output:
+                    arguments.getip(url=args.getip, output=args.output)
+                else:
+                    arguments.getip(url=args.getip)
+                #print(
+                    #f"{colors.red}[!] Please enter file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
+                #)
 
         elif args.cheatsheet:
-            Cheat_sheet.main()
-        elif args.news:
-            if args.news == "latest" or args.news is None:
-                news.main(args.news)
-            else:
-                news.main(args.news)
-        elif args.cheatsheet:
-            Cheat_sheet.main()
+            run_on_browser.main("https://github.com/defronixpro/Defronix-Cybersecurity-Roadmap/blob/main/cheatsheet.md")
+       
         elif args.screenshot:
             if args.file:
                 if args.output:
@@ -183,7 +181,7 @@ try:
 
             else:
                 print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
+                    f"{colors.red}[!] Please enter file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
                 )
         elif args.remove_duplicate:
             if args.file:
@@ -194,7 +192,7 @@ try:
 
             else:
                 print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
+                    f"{colors.red}[!] Please enter file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
                 )
 
         elif args.asnrecord:
@@ -211,7 +209,7 @@ try:
 
             else:
                 print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single ip with --ip 8.8.8.8{colors.reset}"
+                    f"{colors.red}[!] Please enter file with --file path/to/file or pass a single ip with --ip 8.8.8.8{colors.reset}"
                 )
 
         elif args.http_status:
@@ -227,25 +225,8 @@ try:
                     arguments.http_status_code(url=args.domain)
             else:
                 print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
+                    f"{colors.red}[!] Please enter file with --file path/to/file or pass a single domain with --domain https://example.com{colors.reset}"
                 )
-        elif args.ipinfo:
-            arguments.ipinformation(args.ipinfo)
-            if args.file:
-                if args.output:
-                    arguments.ipinformation(path=args.file, output=args.output)
-                else:
-                    arguments.ipinformation(path=args.file)
-            elif args.domain:
-                if args.output:
-                    arguments.ipinformation(url=args.ip, output=args.output)
-                else:
-                    arguments.ipinformation(url=args.ip)
-            else:
-                print(
-                    f"{colors.red}[!] Please file with --file path/to/file or pass a single ip with --ip 8.8.8.8{colors.reset}"
-                )
-
 
         elif args.passwordgen:
             if args.length:
@@ -270,6 +251,15 @@ try:
                 arguments.password_gen(length=args.length, check=args.checkpassword)
             else:
                 arguments.password_gen(check=args.checkpassword)
+
+        elif args.wordlist:
+            arguments.generate_wordlist(
+                args.characters,
+                args.min_length,
+                args.max_length,
+                args.output_file
+            )
+                
         elif args.dnsrecord:
             if args.record:
                 if args.file:
@@ -296,7 +286,7 @@ try:
             main()
 
     def main():
-        update()
+        #update()
         os.system("chmod +x *")
         proc = subprocess.Popen([f"id"], stdout=subprocess.PIPE, shell=True)
         #there keyfor success output and noththere for error output
@@ -312,19 +302,25 @@ try:
         while True:
             os.system("clear")
             banner.main()
-            list_attacks=["TOOLS","CHEATSHEET","NEWS","exit"]
+            list_attacks=["TOOLS","CHEATSHEET","Bug Bounty","Certifications & Roadmap","Write Ups","Man Page","exit"]
             for i in range(len(list_attacks)):
-                print(colors.options,f"{i}) {list_attacks[i]}".title(),colors.reset)
+                print(colors.options,f"{i+1}) {list_attacks[i]}".title(),colors.reset)
             option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
-            if option=="0":
+            if option=="1":
                 os.system("clear")
                 tool.main()
-            elif option=="1":
-                os.system("clear")
-                Cheat_sheet.main()
             elif option=="2":
+                run_on_browser.main("https://github.com/defronixpro/Defronix-Cybersecurity-Roadmap/blob/main/cheatsheet.md")
+            elif option == "3":
                 os.system("clear")
-                news.main()
+                Bug_Bounty.main()
+            elif option =="4":
+                run_on_browser.main("https://github.com/defronixpro/Defronix-Cybersecurity-Roadmap/blob/main/README.md")
+            elif option == "5":
+                run_on_browser.main("https://github.com/defronixpro/Defronix-Cybersecurity-Roadmap/blob/main/Writeups.md")
+            elif option=="6":
+                os.system("clear")
+                os.system("man cyberonix")
             else:
                 exit_program()
     #to run file separately
@@ -332,8 +328,9 @@ try:
         starting()
 except KeyboardInterrupt:
     exit_program()
-except Exception as err:
-    os.system("clear")
-    banner.main()
-    banner.attack(f"{colors.red}ERROR{colors.reset}")
-    banner.description(f"{colors.red}{err}{colors.reset}")
+#except Exception as err:
+    #os.system("clear")
+#    banner.main()
+#    banner.attack(f"{colors.red}ERROR{colors.reset}")
+#    banner.description(f"{colors.red}{err}{colors.reset}")
+

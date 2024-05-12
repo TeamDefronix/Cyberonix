@@ -17,12 +17,12 @@ def main():
             "Go back",
         ]
         for i in range(len(list_vulns)):
-            print(colors.options, f"{i}) {list_vulns[i]}".title(), colors.reset)
+            print(colors.options, f"{i+1}) {list_vulns[i]}".title(), colors.reset)
         try:
             vulns = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         except KeyboardInterrupt:
-            template.exit_program()
-        if vulns == "0":
+            return
+        if vulns == "1":
             github = "Web messaging is the ability to send realtime messages from the server to the client browser. It overrides the cross domain communication problem in different domains, protocols or ports"
             template.template(
                 "WEB Messaging",
@@ -37,7 +37,7 @@ def main():
                 },
             )
 
-        elif vulns == "1":
+        elif vulns == "2":
             github = "SQL injection testing checks if it is possible to inject data into the application so that it executes a user-controlled SQL query in the database. Testers find a SQL injection vulnerability if the application uses user input to create SQL queries without proper input validation. "
             template.template(
                 "WEB Storage SQL Injection",
@@ -51,7 +51,7 @@ def main():
                 },
             )
 
-        elif vulns == "2":
+        elif vulns == "3":
             github = "Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served."
             template.template(
                 "CORS implementation",

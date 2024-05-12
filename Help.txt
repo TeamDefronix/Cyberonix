@@ -1,0 +1,80 @@
+Welcome to Cyberonix - Your Cyber Security Resource Hub!
+
+Basic Options:
+
+  -h, --help                  : Get this help message.
+  --domain DOMAIN, -D DOMAIN   : Target a specific domain.
+  --output OUTPUT, -o OUTPUT   : Save results to a file (provide the file path).
+  --file FILE, -f FILE         : Read input from a file (provide the file path).
+  --ip IP, -ip IP             : Target a specific IP address.
+
+Main Functions:
+
+  --tools, -t                 : Access various cybersecurity tools.
+  --cheatsheet, -c            : Get a cybersecurity reference guide.
+
+IP Operations:
+
+  --getip, -gip               : Get the IP address of a domain.
+  
+  Can use with: --domain, --file, --output
+
+  --ipinfo, -ipi              : Get information about an IP address.
+
+  Can use with: --ip, --file, --output
+
+DNS Operations:
+
+  --dnsrecord, -dns           : Get DNS records for a domain.
+
+  Can use with: --domain, --file, --output
+
+  --record RECORD, -r RECORD   : Specify the type of DNS record (e.g., A, TXT, MX).
+
+  usage: --record <type>
+
+ASN Record:
+
+  --asnrecord, -asn           : Get ASN (network) information.
+
+  Can use with: --ip, --file, --output
+
+Screenshotting:
+
+  --screenshot, -s            : Take a website screenshot.
+
+  Can use with: --domain, --file, --output
+
+HTTP Status:
+
+  --http-status, -S           : Check a website's HTTP status code.
+
+  Can use with: --domain, --file, --output
+
+Remove Duplicate:
+
+  --remove-duplicate, -rd     : Remove duplicate lines from a file.
+
+  Can use with: --file, --output
+
+Password Generation:
+
+  --passwordgen, -P           : Generate a password.
+  --default-password-gen, -pass: Generate a random password (Recommended) (use --length, --checkpassword for customization).
+
+  Customization Options:
+  --upper, -u                 : Include uppercase letters.
+  --lower, -l                 : Include lowercase letters.
+  --digits, -d                : Include numbers.
+  --punctuation, -p           : Include symbols.
+  --length LENGTH, -L LENGTH   : Set password length (default is 8).
+  --checkpassword, -C         : Test the strength of a password.
+
+Worlist Generation:
+
+  --worlist, -w                : To generate a wordlist
+  --characters,-c              : Set of characters to include in the wordlist (Default = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 )
+  --min_length, -min           : Minimum length of the words  ( Default = 4 )
+  --max_length, -max           : Maximum length of the words  ( Default = 6 )
+  --output_file, -ot           : Output file name   ( Default = custom_wordlist.txt )
+
