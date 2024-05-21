@@ -128,7 +128,7 @@ def uninstall_tool(method,name):
     elif method == "deb":
             run = input(f"\033[1m{colors.red}[+] Do You Want To Uninstall the Tool?(y/n):{colors.reset}")
             if run.lower() == "y" or run.lower() == "yes":
-	    	        os.system(f"sudo dpkg –purge {name}")	 
+	    	        os.system(f"sudo dpkg --purge {name}")	 
     elif method == "github":
             run = input(f"\033[1m{colors.red}[+] Do You Want To Github Uninstall the Tool?(y/n):{colors.reset}")
             if run.lower() == "y" or run.lower() == "yes":

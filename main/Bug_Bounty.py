@@ -8,7 +8,7 @@ def main():
         os.system("clear")
         banner.main()
         banner.attack("Bug Bounty")
-        list_root_attacks = ["Bug Bounty Videos Series","Reconnaissance", "Intel Discovery", "Enumeration","Vulnerability Analysis","Exploitation","Reporting", "go back"]
+        list_root_attacks = ["Bug Bounty Video Series","Reconnaissance", "Intel Discovery", "Enumeration","Vulnerability Analysis","Exploitation","Reporting", "go back"]
         for i in range(len(list_root_attacks)):
             print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
         try:
@@ -130,7 +130,7 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack("Discovery tools")
-                banner.description("")
+                banner.description("Intel Discovery in the context of bug bounty refers to Intel's bug bounty program, which aims to identify and address security vulnerabilities in their products. Researchers and ethical hackers are invited to discover and report security flaws in Intel hardware, software, and firmware. In return, they may receive monetary rewards, recognition, and the opportunity to help improve the security of Intel products. The program emphasizes responsible disclosure, meaning vulnerabilities should be reported privately to Intel to allow them to fix the issues before public disclosure.")
                 list_root_attacks = ["Burpsuite\t\t(Recommended)","Owasp Zap\t\t(Recommended)","Nessus\t\t(Recommended)","Metasploit framework(Recommended)", "Dirb ","Dirsearch ","Gobuster\t\t(Recommended) ","go back"]
                 for i in range(len(list_root_attacks)):
                     print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
@@ -167,7 +167,7 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack("Enumeration")
-                banner.description("")
+                banner.description("Enumeration in bug bounty refers to the process of systematically gathering information about a target system to identify potential entry points for exploitation. This can include discovering subdomains, open ports, services running on those ports, directories, files, and user accounts. Enumeration is a crucial step in the reconnaissance phase of a bug bounty program, as it helps bug hunters map the attack surface and uncover vulnerabilities that can be exploited.")
                 list_root_attacks = ["Nmap\t\t(Recommended)","Unicornscan","Masscan\t\t(Recommended)","Nikto ","DNSRecon\t\t(Recommended)","go back"]
                 for i in range(len(list_root_attacks)):
                     print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
@@ -198,7 +198,7 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack("Vulnerability Analysis")
-                banner.description("")
+                banner.description("Vulnerability Analysis in bug bounty refers to the process of identifying, evaluating, and prioritizing security weaknesses in a target system. This involves examining the system's components, configurations, and code to find potential vulnerabilities that could be exploited by attackers. Bug hunters use various tools and techniques during this phase to detect issues such as SQL injection, cross-site scripting (XSS), and insecure configurations. The goal of vulnerability analysis is to understand the nature and impact of the discovered weaknesses, allowing for effective reporting and remediation.")
                 list_root_attacks = ["Wpscan","Burpsuite\t\t(Recommended)","OWASP ZAP\t\t(Recommended)","Nessus\t\t(Recommended)","Sqlmap\t\t(Recommended)","go back"]
                 for i in range(len(list_root_attacks)):
                     print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
@@ -229,8 +229,8 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack("Exploitation")
-                banner.description("")
-                list_root_attacks = ["Crackmapexec\t(Recommended)","Masscan","Beef-XSS\t\t(Recommended)","Social Engineering Toolkit","PowerSploit","Mimikatz\t\t(Recommended)","go back"]
+                banner.description("Exploitation in bug bounty refers to the phase where a bug hunter attempts to leverage identified vulnerabilities to execute attacks on a target system. The objective is to demonstrate the practical impact of a vulnerability, such as gaining unauthorized access, escalating privileges, or exfiltrating sensitive data. This step often involves crafting and executing specific exploits to prove that the vulnerability can be used in a real-world scenario. Successful exploitation helps validate the severity of the vulnerability, guiding the target organization on necessary remediation actions.")
+                list_root_attacks = ["Crackmapexec\t(Recommended)","Masscan","Beef\t\t(Recommended)","Social Engineering Toolkit","PowerSploit","Mimikatz\t\t(Recommended)","go back"]
                 for i in range(len(list_root_attacks)):
                     print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
                 try:
@@ -244,8 +244,8 @@ def main():
                     print("\n[+] Masscan")
                     masscan()
                 elif ask == "3":
-                    print("\n[+] Beef")
-                    Exploitation_Tools.beef
+                    print("\n[+] beef")
+                    Exploitation_Tools.beef()
                 elif ask == "4":
                     print("\n[+]Social Engineering Toolkit")
                     Password_Hacking.setoolkit()
@@ -266,7 +266,7 @@ def main():
                 os.system("clear")
                 banner.main()
                 banner.attack("Reporting Tools")
-                banner.description("")
+                banner.description("Reporting tools in bug bounty are specialized software or platforms that help bug hunters document and submit their findings to the target organization. These tools facilitate the structured reporting of vulnerabilities, including details such as the type of vulnerability, steps to reproduce it, potential impact, and suggested mitigations. ")
                 list_root_attacks = ["Dradis","CherryTree\t\t(Recommended)","faradaystart","recordmydesktop ","pipal","maltego\t\t(Recommended)","go back"]
                 for i in range(len(list_root_attacks)):
                     print(colors.options, f"{i+1}) {list_root_attacks[i]}".title(), colors.reset)
@@ -299,7 +299,7 @@ def main():
 
 def recordmydesktop():
     os.system("clear")
-    github ="recordmydesktop application produces an ogg-encapsulated theora-vorbis file. recordMyDesktop tries to be as unobstrusive as possible by proccessing only regions of the screen that have changed"
+    github ="recordmydesktop application produces an ogg-encapsulated theora-vorbis file. recordMyDesktop tries to be as unobstrusive as possible by proccessing only regions of the screen that have changed."
     template.template("recordmydesktop","recordmydesktop --help",github.strip(),{"How to record screencasts with recordMyDesktop":"https://opensource.com/business/15/11/how-record-screencasts","recordmydesktop Tool help file":"https://www.kali.org/tools/recordmydesktop/",})
                 
 def faraday():

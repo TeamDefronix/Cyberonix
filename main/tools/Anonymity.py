@@ -4,6 +4,24 @@ import requests
 from bs4 import BeautifulSoup
 import subprocess
 
+def check_tor_installed():
+    try:
+        # Run the 'which tor' command
+        result = subprocess.run(['which', 'tor'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        # Decode the output from bytes to string
+        output = result.stdout.decode().strip()
+        
+        if output:
+            return
+        else:
+            os.system("apt install tor -y")     # for tor installation
+    except Exception as e:
+        print("An error occurred:", str(e))
+
+
+
+
 
 def main():
     
@@ -23,6 +41,7 @@ def main():
             os.system("clear")
             banner.main()
             banner.attack("Tor")
+            check_tor_installed()  # Check if Tor is installed
             Recommended_Tool.recommended("tor")
 
         elif option == "2":

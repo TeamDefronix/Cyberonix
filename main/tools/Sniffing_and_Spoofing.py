@@ -19,7 +19,7 @@ def main():
             option = input(f"\n {colors.select}Select An Option ->{colors.reset}  ")
         except KeyboardInterrupt:
             return
-        if option == "0":
+        if option == "1":
             print("\n[+] Wireshark")
             Vulnerability_Analysis.wireshark()
         elif option == "2":
@@ -99,7 +99,7 @@ def netsniff_ng():
                 "http://netsniff-ng.org/", 'p', 1)
     github_text_2 = github_getting_text(
                 "http://netsniff-ng.org/", 'p', 2)
-    github = github_text_0 + github_text_1 + github_text_2
+    github = github_text_0.strip().replace("\n", "").replace("\t", "") + github_text_1.strip().replace("\n", "").replace("\t", "") + github_text_2.strip().replace("\n", "").replace("\t", "")
     template.template("netsniff-ng", "netsniff-ng -h", github.strip(), {"Netsniff-ng Website": "http://netsniff-ng.org/", "Sniffing Network Traffic": "https://medium.com/purple-team/sniffing-network-traffic-with-netsniff-ng-55b8f5d436c2",
                               "Manual": "https://linux.die.net/man/8/netsniff-ng", "Video Resources": "https://www.irongeek.com/i.php?page=videos/hack3rcon4/09-netsniff-ng-jon-schipp"})
         

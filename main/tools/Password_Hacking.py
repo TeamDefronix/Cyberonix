@@ -257,7 +257,7 @@ def setoolkit():
 def hiddeneye():
     github = "HiddenEye is a modern phishing tool with advanced functionality. It is written in Python and can be run on Windows, Linux, and Mac OS X. It allows you to perform various phishing attacks."
     template.template("HiddenEye", "python HiddenEye.py", github.strip(), {"HiddenEye by GeeksForGeeks": "https://www.geeksforgeeks.org/hiddeneye-modern-phishing-tool-with-advanced-functionality/", "HiddenEye by Zsecurity": "https://zsecurity.org/hiddeneye-with-ngrok-all-in-one-phishing-solution/",
-                                      "HiddenEye by Null-Byte": "https://null-byte.wonderhowto.com/forum/phish-with-hiddeneye-tool-with-advanced-feature-0323221/"}, method="github", github_install="git clone https://github.com/Morsmalleo/HiddenEye && cd HiddenEye && pip install -r requirements.txt", github_check="HiddenEye")
+                                      "HiddenEye by Null-Byte": "https://null-byte.wonderhowto.com/forum/phish-with-hiddeneye-tool-with-advanced-feature-0323221/"}, method="github", github_install="git clone https://github.com/Morsmalleo/HiddenEye && cd HiddenEye && pip install -r requirements.txt && pip install pyngrok", github_check="HiddenEye")
 def r3bu5():
     github = "It is a Phishing tool that has latest and updated login pages, Mask URL support, Beginners Friendly, Multiple tunneling options"
     template.template("r3bu5", "./r3bu5.sh", github.strip(), {"Github Repo of r3bu5": " https://github.com/k46-db0y/r3bu5"}, method="github",

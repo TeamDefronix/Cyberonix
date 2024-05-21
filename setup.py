@@ -4,6 +4,23 @@ import subprocess
 from main.tools import banner,colors
 #import cyberonix
 
+def is_module_installed(module_name):
+    try:
+        pip_result = subprocess.run(['pip', 'show', module_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if pip_result.returncode == 0 and pip_result.stdout:
+            return True
+        
+        apt_result = subprocess.run(['apt', 'list',  module_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if apt_result.returncode == 0 and module_name in apt_result.stdout:
+            return True
+        else:
+            os.system("pip install dnspython==2.3.0")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False
+
+
+
 def exit_program():
     os.system("clear")
     banner.main()
@@ -14,6 +31,7 @@ try:
         os.system("clear")
         banner.main()
         banner.attack("Setup")
+        is_module_installed('dnspython')
         os.system("pip install -r requirements.txt")
         os.system("pip install selenium")
         os.system("sudo apt install golang -y")

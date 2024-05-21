@@ -39,7 +39,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("XSS")
-                        des = "It is recommended to test manually for XSS vulnerability to get better understanding & results.\nCheck out the writeup section to to learn about Cross Site Scripting"
+                        des = "It is recommended to test manually for XSS vulnerability to get better understanding & results.Check out the writeup section to to learn about Cross Site Scripting"
                         banner.description(des)
                         list_tools = ["Dalfox", "XSStrike", "Xsser", "go back"]
                         for i in range(len(list_tools)):
@@ -243,7 +243,7 @@ def main():
                         os.system("clear")
                         banner.main()
                         banner.attack("Open Redirection")
-                        des = "It is recommended to test manually for Open Redirection to get better understanding & results.\nCheck out the writeup section to to learn about Open Redirection"
+                        des = "It is recommended to test manually for Open Redirection to get better understanding & results.Check out the writeup section to to learn about Open Redirection"
                         banner.description(des)
                         list_tools = ["OpenRedireX", "Oralyzer", "go back"]
                         for i in range(len(list_tools)):
@@ -365,9 +365,10 @@ def openredirex():
                             )
 
 def xsser():
-    github = github_getting_text(
+    github_p1 = github_getting_text(
                                 "https://www.kali.org/tools/xsser/", "p", 3
                             )
+    github = github_p1.strip().replace("\n", "").replace("\t", "")
     template.template(
                                 "xsser",
                                 "xsser -h",
@@ -399,9 +400,7 @@ def xsstrike():
                                 github_check="XSStrike",
                             )
 def dalfox():
-    github = github_getting_text(
-                                "https://github.com/hahwul/dalfox/blob/main/README.md", 'p', 1
-                            )
+    github = "DalFox is a powerful open-source tool that focuses on automation, making it ideal for quickly scanning for XSS flaws and analyzing parameters. Its advanced testing engine and niche features are designed to streamline the process of detecting and verifying vulnerabilities."
     template.template(
                                 "dalfox",
                                 "dalfox",

@@ -2,6 +2,7 @@ from main.tools import banner, colors, template, waiting, writeup, Configuration
 import os
 import requests
 import requests
+import re
 from bs4 import BeautifulSoup
 
 
@@ -147,7 +148,7 @@ def burp_suite():
 
 def owasp_zap():
     os.system("clear")
-    github = "The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.\nIt is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox. https://www.owasp.org/index.php/ZAP"
+    github = "The OWASP Zed Attack Proxy (ZAP) is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications.It is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen testers toolbox. https://www.owasp.org/index.php/ZAP"
     template.template('zaproxy', 'zaproxy', github.strip(), {"How to setup OWASP ZAP to scan your web application for security vulnerabilities": "https://www.linkedin.com/pulse/how-setup-owasp-zap-scan-your-web-application-security-botla/", "Authenticated Scan using OWASP-ZAP in Windows.": "https://medium.com/@secureica/authenticated-scan-using-owasp-zap-f0a71dafe41",
                       "OWASP ZAP: 6 Key Capabilities and a Quick Tutorial": "https://www.hackerone.com/knowledge-center/owasp-zap-6-key-capabilities-and-quick-tutorial", "Initial Setup": "https://infosecgirls.gitbook.io/infosecgirls-training/v/appsec/initial-setup-with-owasp-zap/untitled", "Setup OWASP ZAP": "https://infosecgirls.gitbook.io/infosecgirls-training/v/appsec/initial-setup-with-owasp-zap/setup-owasp-zap"})
 
@@ -180,6 +181,7 @@ def dirsearch():
 def wapiti():
     os.system("clear")
     github = github_getting_text("https://wapiti-scanner.github.io/", 'p', 6)
+    github = re.sub(r'\s+', ' ', github).strip()
     template.template("wapiti", "wapiti", github.strip(), {"wapiti free web application vulnerability scanner": "https://pentestit.medium.com/wapiti-free-web-application-vulnerability-scanner-ce7712adf644", "Official docs": "https://github.com/wapiti-scanner/wapiti", "wapiti tutorial":
                       "https://www.kalilinux.in/2021/01/wapiti-tutorial.html", "complete guide to using wapiti web vulnerability scanner to keep your web applications websites secure": "https://linuxsecurity.com/features/complete-guide-to-using-wapiti-web-vulnerability-scanner-to-keep-your-web-applications-websites-secure"})
 

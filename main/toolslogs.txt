@@ -1,0 +1,22 @@
+dpkg-query: package 'slowhttptest' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'nessus' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'hping3' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'feroxbuster' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'dradis' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'maltego' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'maltego' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'wifite' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'wapiti' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'wapiti' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.
+dpkg-query: package 'nessus' is not installed and no information is available
+Use dpkg --info (= dpkg-deb --info) to examine archive files.

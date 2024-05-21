@@ -58,29 +58,21 @@ def github_getting_text(link, selector, indexvalue):
 def slowloris():
     github = "Slowloris is a Low bandwidth  HTTP Denial of Service attack that affects threaded servers"
     template.template(
-                "Slowloris",
-                "python3 slowloris.py -h",
+                "slowloris",
+                "slowloris.py -h",
                 github.strip(),
                 {
                     "Slowloris DDOS Attack Tool in Kali Linux": "https://www.geeksforgeeks.org/slowloris-ddos-attack-tool-in-kali-linux/",
                     "What is Slowloris?": "https://www.imperva.com/learn/ddos/slowloris/",
                     "Performing a genuine slowloris attack": "https://ourcodeworld.com/articles/read/962/performing-a-genuine-slowloris-attack-slowhttp-of-indefinite-length-in-kali-linux",
-                },
-                link="https://github.com/gkbrk/slowloris.git",
-                method="github",
-                github_install="git clone https://github.com/gkbrk/slowloris.git",
-                github_check="slowloris",
-            )
+                },)
 def thc_ssl_dos():
-    github = github_getting_text(
+    github_p1 = github_getting_text(
                 "https://www.kali.org/tools/thc-ssl-dos/", "p", 1
             )
-    github += github_getting_text(
-                "https://www.kali.org/tools/thc-ssl-dos/", "p", 2
-            )
-    github += github_getting_text(
-                "https://www.kali.org/tools/thc-ssl-dos/", "p", 3
-            )
+    github_p2= github_getting_text("https://www.kali.org/tools/thc-ssl-dos/", "p", 2)
+    github_p3= github_getting_text("https://www.kali.org/tools/thc-ssl-dos/", "p", 3)
+    github = github_p1.strip().replace("\n", "").replace("\t", "")+github_p2.strip().replace("\n", "").replace("\t", "")+github_p3.strip().replace("\n", "").replace("\t", "")
     template.template(
                 "thc-ssl-dos",
                 "thc-ssl-dos -h",
@@ -93,9 +85,10 @@ def thc_ssl_dos():
                 },
             )
 def slowhttptest():
-    github = github_getting_text(
+    github_p1 = github_getting_text(
                 "https://www.kali.org/tools/slowhttptest/", "p", 1
             )
+    github = github_p1.strip().replace("\n", "").replace("\t", "")
     template.template(
                 "slowhttptest",
                 "slowhttptest -h",
@@ -109,9 +102,12 @@ def slowhttptest():
                 },
             )
 def goldeneye():
-    github = github_getting_text(
+    github_p1 = github_getting_text(
                 "https://www.kali.org/tools/goldeneye/", "p", 0
+	                
+
             )
+    github = github_p1.strip().replace("\n", "").replace("\t", "")
     template.template(
                 "goldeneye",
                 "goldeneye -h",

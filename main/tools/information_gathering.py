@@ -60,7 +60,7 @@ def main():
                 "Robtex": "https://www.robtex.com/",
                 "Builtwith": "https://builtwith.com/",
                 "Intodns": "https://www.intodns.com/",
-                "Serachdns": "https://searchdns.netcraft.com/",
+                "Searchdns": "https://searchdns.netcraft.com/",
                 "Hackertarget": "https://hackertarget.com/",
                 "Vulners": "https://vulners.com/",
                 "cvedetails": "https://www.cvedetails.com/",

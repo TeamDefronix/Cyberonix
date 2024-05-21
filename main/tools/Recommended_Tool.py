@@ -1,4 +1,4 @@
-from main.tools import banner, waiting, writeup, colors, run_on_browser, Recommended_Tool,template
+from main.tools import banner, waiting, writeup, colors, run_on_browser, Recommended_Tool,template, Anonymity
 import os
 import readline
 targets = []
@@ -145,13 +145,17 @@ def recommended(name):
     elif name.lower() == "nipe":
         nipe(name)
     elif name.lower() == "tor":
+        
         tor(name)
 
 ###################################  configuration management #######################################################################
     elif name.lower() == "gobuster":
         gobuster(name)
     elif name.lower() == "securityheaders":
-        os.system("cd Tools/securityheaders && python3 securityheaders.py")
+        path = template.check_path("securityheaders")
+        os.chdir(path)
+        command_line("securityheaders","python3 securityheaders.py")
+
     elif name.lower() == "secretfinder":
         secretfinder(name)
     
@@ -208,6 +212,7 @@ def recommended(name):
         fuxploider(name)
 ###################################  Risk func payment #######################################################################
     elif name.lower() == "fiddler":
+
         os.system("cd Tools/fiddler && mono Fiddler.exe")
 ###################################  NEW Bug BOUNTY SECITON #######################################################################
 ###################################  Exploitation #######################################################################
@@ -258,27 +263,35 @@ def ip_valid(user_input):
             except Exception as e:
                 return 2       
 #command_line function
-def command_line(name):
+def command_line(name,command=""):
+    if command == "":
+        command=name
     try:
         template.load_banner(name)
-        command=""
-        while not command:
-            command = input(f"\n {colors.select}Enter a command : {colors.reset}")
-            if "exit" in command:
+        instruction=""
+        while not instruction:
+            instruction = input(f"\n {colors.select}Enter only command arguments : {colors.reset}")
+            instruction_sanitization = instruction.split()
+            if  instruction.lower() == "exit":
                 break
-            elif not command.strip(): 
+            elif not instruction.strip(): 
                 template.load_banner(name)
                 continue
-            elif name not in command:
-                template.load_banner(name)
-                print(f"\n{colors.red} please use only {name} command {colors.reset}\n")
-                command = None
-                continue
-            else:
-                template.load_banner(name)
-                os.system(command)
+
+
+# Check if there is at least one word
+            if len(instruction_sanitization) > 0:
+    # Access the string at index 0 using slicing
+    
+                if ( instruction_sanitization[0].lower() == command.lower()):
+                    print(f"\n{colors.red} E.g Don't include tool name/script before arguments {colors.reset}\n")
+    	
+                else:
+                    template.load_banner(name)
+                    os.system(f"{command} {instruction}")
+ 
     except KeyboardInterrupt:
-        return
+         return
     
 def change_target(name):
     try:
@@ -1905,7 +1918,11 @@ def linpeas(name):
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("LinPeas")
+                os.chdir(path)
+
+                command_line("LinPeas","bash linpeas.sh")
+
                 continue
             elif option == "5":
                 break
@@ -1950,7 +1967,12 @@ def linenum(name):
                 change_target(name)
                 continue
             elif option == "6":
-                command_line(name)
+                path = template.check_path("LinEnum")
+                os.chdir(path)
+               
+                print(path)
+                command_line("LinEnum","bash linEnum.sh")
+
                 continue
             elif option == "7":
                 break
@@ -1972,19 +1994,22 @@ def sudo_killer(name):
             if option == "1":
                 template.load_banner(name)
                 print(colors.options,f"Simple Scans is running... ",colors.reset )
-                os.system(f"cd Tools/SUDO_KILLER && chmod u+x * && ./SUDO_KILLERv2.4.2.sh ") 
+                os.system(f"cd Tools/SUDO_KILLER && chmod u+x * && ./SUDO_KILLERv3.sh ") 
                 continue
             elif option == "2":
                 template.load_banner(name)
                 print(colors.options,f"Potential vulnerabilities... ",colors.reset )
-                os.system(f"cd Tools/SUDO_KILLER && chmod u+x * && ./SUDO_KILLERv2.4.2.sh -p ") 
+                os.system(f"cd Tools/SUDO_KILLER && chmod u+x * && ./SUDO_KILLERv3.sh -p ") 
                 continue
             
             elif option== "3":
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("SUDO_KILLER")
+                os.chdir(path)
+                command_line("SUDO_KILLER","sudo bash SUDO_KILLERv3.sh")
+
                 continue
             elif option == "5":
                 break
@@ -2019,7 +2044,10 @@ def linux_exploit_suggester_2(name):
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("linux-exploit-suggester-2")
+                os.chdir(path)
+                command_line("linux-exploit-suggester-2","./linux-exploit-suggester-2.pl -h")
+
                 continue
             elif option == "5":
                 break
@@ -2058,7 +2086,10 @@ def linux_smart_enumeration(name):
                 change_target(name)
                 continue
             elif option == "5":
-                command_line(name)
+                path = template.check_path("linux-smart-enumeration")
+                os.chdir(path)
+                command_line("linux-smart-enumeration","./lse.sh -c")
+
                 continue
             elif option == "6":
                 break
@@ -2097,7 +2128,10 @@ def pspy64(name):
                 change_target(name)
                 continue
             elif option == "5":
-                command_line(name)
+                path = template.check_path("PSPY")
+                os.chdir(path)
+                command_line("PSPY"," ./pspy64")
+
                 continue
             elif option == "6":
                 break
@@ -2135,7 +2169,10 @@ def upx(name):
                 os.system(f"cd Tools/upx-4.0.1-i386_linux && chmod u+x upx && ./upx -o2 {file}")
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("upx-4.0.1-i386_linux")
+                os.chdir(path)
+                command_line("upx-4.0.1-i386_linux","./upx")
+
                 continue
             elif option == "5":
                 break
@@ -2473,7 +2510,10 @@ def secretfinder(name):
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("SecretFinder")
+                os.chdir(path)
+
+                command_line("SecretFinder","python3 SecretFinder.py")
                 continue
             elif option == "5":
                 break
@@ -2523,7 +2563,10 @@ def xsstrike(name):
                 change_target(name)
                 continue
             elif option == "6":
-                command_line(name)
+                path = template.check_path("XSStrike")
+                os.chdir(path)
+                command_line("XSStrike","python3 xsstrike.py")
+
                 continue
             elif option == "7":
                 break
@@ -2536,7 +2579,7 @@ def xsstrike(name):
 def dalfox(name):
     try:
         template.load_banner(name)
-        s.system("dalfox -h") 
+        os.system("dalfox -h") 
         while True:
             list_attacks=["Command Line","Open this for Best Commands(link to website)","Output handling(link to website)","Parameter Analysis and XSS Scanning(link to website)","Scanning single url's(link to website)","exit"]
             for i in range(len(list_attacks)):
@@ -2597,7 +2640,10 @@ def oralyzer(name):
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("Oralyzer")
+                os.chdir(path)
+                command_line("Oralyzer","python3 oralyzer.py")
+
                 continue
             elif option == "5":
                 break
@@ -2642,7 +2688,10 @@ def openredirex(name):
                 change_target(name)
                 continue
             elif option == "4":
-                command_line(name)
+                path = template.check_path("OpenRedireX")
+                os.chdir(path)
+                command_line("OpenRedireX","python3 openredirex.py")
+
                 continue
             elif option == "5":
                 break
@@ -2712,7 +2761,7 @@ def slowloris(name):
                 port = input("\nEnter the port number: ")
                 socket  = input("\nEnter how many socket you want to add  (like 600): ")
                 print(colors.options,f"Slowloris is running...",colors.reset )
-                os.system(f"cd Tools/slowloris && python3 slowloris.py {targets[0]} -s {socket} -p {port} -v -ua --sleeptime {sleeptime}") 
+                os.system(f"slowloris {targets[0]} -s {socket} -p {port} -v -ua --sleeptime {sleeptime}") 
                 continue
             elif option == "2":
                 template.load_banner(name)
@@ -2722,21 +2771,21 @@ def slowloris(name):
                 proxyhost = input("\nEnter proxy IP: ")
                 proxyport = input("\nEnter proxy port number: ")
                 print(colors.options,f"Slowloris is running...",colors.reset )
-                os.system(f"cd Tools/slowloris && python3 slowloris.py {targets[0]} -s {socket} -p {port} -v --proxy-host {proxyhost} --proxy-port {proxyport} --sleeptime {sleeptime}") 
+                os.system(f"slowloris {targets[0]} -s {socket} -p {port} -v --proxy-host {proxyhost} --proxy-port {proxyport} --sleeptime {sleeptime}") 
                 continue
             elif option == "3":
                 template.load_banner(name)
                 port = input("\nEnter the port number: ")
                 socket  = input("\nEnter how many socket you want to add  (like 600): ")
                 print(colors.options,f"Slowloris is running...",colors.reset )
-                os.system(f"cd Tools/slowloris && python3 slowloris.py {targets[0]} -s {socket} -p {port} -ua") 
+                os.system(f"slowloris {targets[0]} -s {socket} -p {port} -ua") 
                 continue
             elif option == "4":
                 template.load_banner(name)
                 port = input("\nEnter the port number: ")
                 socket  = input("\nEnter how many socket you want to add  (like 600): ")
                 print(colors.options,f"Slowloris is running...",colors.reset )
-                os.system(f"cd Tools/slowloris && python3 slowloris.py {targets[0]} --https -s {socket} -p {port} -ua") 
+                os.system(f"slowloris {targets[0]} --https -s {socket} -p {port} -ua") 
                 continue
             elif option== "5":
                 change_target(name)
@@ -3087,7 +3136,10 @@ def fuxploider(name):
                 change_target(name)
                 continue
             elif option == "5":
-                command_line(name)
+                path = template.check_path("fuxploider")
+                os.chdir(path)
+                command_line("fuxploider","python3 fuxploider.py")
+
                 continue
             elif option == "6":
                 break
