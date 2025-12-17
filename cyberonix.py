@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import os
 import subprocess
 from main.tools import banner,colors,template,Recommended_Tool,run_on_browser
