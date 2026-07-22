@@ -441,6 +441,7 @@ Worlist Generation:
 
 - ## Cheatsheets
 
+  - [Darkmoon](https://github.com/ASCIT31/Dark-Moon) - Open source (GPL-3.0) autonomous AI penetration testing platform covering web, API, Active Directory and Kubernetes, with proof of exploitation and a local privacy gateway.
   - [Nmap](https://www.tutorialspoint.com/nmap-cheat-sheet)
   - [Maltego](https://static.maltego.com/cdn/Case%20studies/Building-Integrations-for-Maltego-Cheat-Sheet.pdf)
   - [Hping3](https://cyberwar.nl/d/cheatsheets/hping3_cheatsheet_v1.0-ENG.pdf)
